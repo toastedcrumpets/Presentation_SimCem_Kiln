@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+    <head> 
+	<meta charset="utf-8">
+	<title>SimCem</title>
+	<meta name="description" content="A presentation by Marcus Bannerman.">
+	<meta name="author" content="Marcus Bannerman <m.bannerman@gmail.com">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" 
+	      content="black-translucent" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<link rel="stylesheet" href="reveal.js/css/reveal.css"></link>
+	<!-- Default themes -->
+	<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme"></link>
+	<link rel="stylesheet" href="UoA.css"></link>
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css"></link>
+	<link rel="stylesheet" href="Font-Awesome/css/font-awesome.min.css"></link>
+	<!-- For LaTeX formating highlighting -->
+	<!--[if lt IE 9]>
+	    <script src="reveal.js/lib/js/html5shiv.js"></script>
+	<![endif]-->
+	<script>
+	 //If the query string print-pdf is there, then load the print css style sheet
+	 if (window.location.search.match( /print-pdf/gi )) {
+	     var link = document.createElement( 'link' );
+	     link.rel = 'stylesheet';
+	     link.type = 'text/css';
+	     link.href = 'reveal.js/css/print/pdf.css';
+	     document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+	     var link = document.createElement( 'link' );
+	     link.rel = 'stylesheet';
+	     link.type = 'text/css';
+	     link.href = 'UoApdf.css';
+	     document.head.appendChild( link );
+	 }
+
+	 //Function to allow inserting of parameters to the current URL
+	 function insertParam(key, value)
+	 {
+	     key = encodeURI(key); value = encodeURI(value);
+
+	     var kvp = document.location.search.substr(1).split('&');
+
+	     var i=kvp.length; var x; while(i--) 
+		 {
+		     x = kvp[i].split('=');
+
+		     if (x[0]==key)
+			 {
+			     x[1] = value;
+			     kvp[i] = x.join('=');
+			     break;
+			 }
+		 }
+
+	     if(i<0) {kvp[kvp.length] = [key,value].join('=');}
+
+	     //this will reload the page, it's likely better to store this until finished
+	     return kvp.join('&'); 
+	 }
+	</script>
+    </head>
+    <body>
+	<div class="reveal">
+	    <div class="slides" style="border:1px solid black">
+		<section style="height:100%;width:100%;">
+		    <section>
+			<div class="backbox">
+			    <h2>The Right Atmosphere</h2>
+			    <h3>Lessons learnt while developing kiln models</h3>
+			</div>
+			<p><br/><em>
+			    Nanocem workshop high temperature chemistry of clinker formation and performance in cement<br/><br/>
+			    Marcus N. Campbell Bannerman<br/>
+			    <a href="mailto:m.campbellbannerman@abdn.ac.uk">m.campbellbannerman@abdn.ac.uk</a><br/></em>
+			</p>
+			<div style="width:10em;float:left;margin-left:1em;">
+			    <object type="image/svg+xml" data="img/UoALarge.svg" width="100%" height="100%">
+				Your browser does not support SVG
+			    </object>
+			</div>
+			<a style="float:right;cursor:pointer;" onclick="document.location.search = insertParam('print-pdf');" style="cursor:pointer;" id="PrintButton"><span style="font-family:FontAwesome; font-style: normal;" class="fa fa-print"></span></a>
+		    </section>
+		</section>
+		<section style="height:100%;width:100%;">
+		    <h2>Background</h2>
+		    <section>
+			<ul>
+			    <li>
+				The first thing I learnt in cement is  that <b>collaboration is
+				essential</b> as its such a broad
+				field incl.  pyroprocessing
+				(chemistry/thermodynamics/heat-transfer),
+				hydration
+				(microstructure/thermodynamics),
+				products/aggregates, economics
+				(geology/mineralogy)&hellip;</li>
+			    <li class="fragment">
+				My expertise is computation and general
+				process engineering. Was the learning
+				curve steep for everyone or just me?</li>
+			    <li class="fragment">The right atmosphere:
+				Could this be easier with more open
+				sharing of data/expertise via modern
+				software tools?</li>
+			    <li class="fragment">
+				Fortunately, I started as part of a
+				large team containing Prof. F. Glasser.
+				We need to make a virtual Fred for
+				everyone (more later).</li>
+			</ul>
+		    </section>
+		    <section>
+			<ul style="padding-top:2em;">
+			    <li>
+			    What was my learning curve?
+			    </li>
+			    <li class="fragment">
+				(2013-2016) £3.3M <b>G</b>reen-<b>C</b>oncrete <b>P</b>roject <b>(GCP)</b>
+				sponsored by the Gulf Organisation for Research
+				&amp; Development, Qatar. PIs: F. P. Glasser and
+				M. S. Imbabi, (10+ PDRAs, 10+PhDs @ Aberdeen).</li>
+			    <li class="fragment">
+				One PhD student (Dr Theodore Hanein), three years
+				(at 10%), and £250k to take a
+				partially-verified lab-scale sulfur-burning
+				$\text{C}\bar{\text{S}}\text{A}$ process through
+				pilot trials and design a full-scale process.</li>
+			</ul>
+		    </section>
+		    <section>
+			<div style="display:flex;align-items:center;font-size:65%;">
+			    <div style="flex: 0 0 33%; border-right:2px solid black;">
+				<h3>Formulations team<br/>Prof. F. Glasser</h3>
+				<img src="img/kiln.jpg" width="500" height="312" >
+				<ul>
+				    <li><b>Atmospheric</b> control tubular furnace.</li>
+				    <li>Phase compatibility of
+					$\text{C}\bar{\text{S}}\text{A}$.</li>
+				    <li>Demonstrate the
+					sulfur-transfer process.</li>
+				    <li>Limited testing of raw mixes and products.</li>
+				</ul>
+			    </div>
+			    <div style="flex:1;padding-top:3em;" class="fragment" data-fragment-index="2">
+				<h3>Production team<br/>Me</h3>
+				<img src="img/trials.jpg" width="1637" height="871">
+				<ul>
+				    <li>Full-scale sulfur-buring process design.</li>
+				    <li>Pilot trials, IBU-tech, Weimar
+					to produce clinker for product
+					testing and process verification.</li>
+				</ul>
+			    </div>
+			    <div style="flex:1; border-left:2px solid black;" class="fragment" data-fragment-index="1">
+				<h3>Products/Hydration team<br/>Dr. M. Imbabi</h3>
+				<img src="img/products1.png" style="width:40%; display:inline-block;">
+				<img src="img/products2.png" style="width:40%; display:inline-block;">
+				<img src="img/products3.png" style="width:40%; display:inline-block;">
+				<img src="img/products4.png" style="width:40%; display:inline-block;">
+				<ul>
+				    <li>Synthetic clinker work to
+					determine optimal target
+					formulations.</li>
+				    <li>Testing of trial clinker.</li>
+				</ul>
+			    </div>
+ 			</div>
+			<p class="fragment" data-fragment-index="3">
+			    (and there was a recycled aggregates team led by Prof. Rod Jones)
+			</p>
+		    </section>
+		    <section>
+			<ul>
+			    <li>
+				We achieved all our goals in 2.5
+				years, with <£100k spent on 20+ trial
+				points (>15kg product each, one 100kg
+				production run), thanks to a few key
+				aspects:<ul>
+				<li class="fragment">Careful
+				    <b>atmospherically-controlled</b>
+				    tubular furnace experiments
+				    testing thermodynamic
+				    predictions.</li>
+				<li class="fragment">Extensive predictive
+				    thermodynamic modelling of tubular furnace and
+				    pilot kilns (incl. <b>atmospheres</b>).</li>
+				</ul>
+			    </li>
+			    <li class="fragment">
+				If I'd read the literature first, I
+				would have never attempted it or I
+				would have asked for more time and
+				money. </li>
+			</ul>
+		    </section>
+		</section>
+		<section>
+		    We encountered many &ldquo;traps&rdquo; building our thermodynamic database:
+		    <ul>
+			<li class="fragment">
+			    Misprints in compiled data sets. E.g., $\text{C}_3\text{A}$ in
+			    Babushkin et al. 1985.
+			</li>
+			<li class="fragment">
+			    Unknown sources of incorrect data (which only becomes
+			    apparent after detailed inspection). E.g.,
+			    $\text{C}_4\text{AF}$ in Babushkin et al. 1985.</li>
+			<li class="fragment">
+			    Errors in coefficients and/or tabulated data. E.g., <b>NIST(!)</b> C-A-S-H compilation of Haas Jr. et
+			    al. 1981.
+			</li>
+			<li class="fragment">
+			    Dangerous rounding. E.g., E.g., $C_p=1120\approx
+			    1100$ in Kelley 1960.</li>
+			<li class="fragment">
+			    Significant "unknown" revision of data, E.g.,
+			    rankinite compiled by NIST revised
+			    significantly by Hillert et al. 1991.</li>
+			<li class="fragment">
+			    Missing or incorrect ye'elimite and ternesite data.
+			</li>
+			<li class="fragment">
+			    Much of this is known in the oral history of
+			    cement, but why do new people have to keep
+			    rediscovering it?
+			</li>
+			<li class="fragment">
+			    NASA shares rocket/ICBM calculations, can
+			    we share a cement database?</li>
+		    </ul>
+		</section>
+		<section style="height:100%;width:100%;">
+		    <iframe src="http://simcem.com" style="height:100%; width:100%;"></iframe>
+		</section>
+		<section>
+		    <ul>
+			<li>The database uses the following main sources of information:
+			    <ul>
+				<li>NASA CEA database for combustion/rocketry.</li>
+				<li>Holland and Powell (2011) database for petrological mineralogy.</li>
+				<li>Around 80 individual sources added by hand.</li>
+				<li>Primarily stochiometric phases, but
+				    end-member models from Holland and
+				    Powell are nearly there.</li>
+				<li>
+				    Some mineralisation accounted for
+				    using entropic effects only
+				    (thanks to Duncan for the idea).</li>
+				<li>
+				    Melt data is currently incomplete
+				    so its disabled.</li>
+			    </ul>
+			</li>
+			<li class="fragment">
+			    The free-energy minimizer uses a unique
+			    generating function approach and my own
+			    compile-time computer algebra library (<a href="http://github.com/toastedcrumpets/stator">Stator</a>), combined with a
+			    range of general optimizers (IPOpt, NLOPT/SLSQP)
+			    with some modifications (more information on request).</li>
+		    </ul>
+		</section>
+		<section style="height:100%;width:100%;">
+		    <section>
+			<h3>Example applications</h3>
+			<div style="display:flex;align-items:center;">
+			    <div style="flex: 0 0 60%">
+				<ul>
+				    <li>
+					Box and tubular furnace
+					experiments demonstrated
+					irregular results.</li>
+				    <li class="fragment">
+					<b>Example:</b> Ternesite would only form in box
+					furnaces using sacrificial $\text{C}\bar{\text{S}}$
+					(see right), not in the tubular furnace using 50:50 bottled <b>dry</b> air:$\text{SO}_2,$
+					or under pure $\text{SO}_2$
+					atmospheres.</li>
+				    <li class="fragment">
+					<b>Formulation team's conclusion</b>:
+					Ternesite stabilized by 
+					atmospheric moisture?<br/>
+					<div style="font-size:50%">
+					    Y. B. Pliego-Cuervo and F. P. Glasser. “Role of sulphates in cement clinkering: the
+					    calcium silicosulphate phase”. In: Cement and Concrete Research 8.4 (1978), pp. 455–459.
+					</div>
+
+				    </li>
+				    <li class="fragment">
+					What does thermodynamics tell us?
+				    </li>
+				</ul>
+			    </div>
+			    <div style="flex:1;" >
+				<figure>
+				    <img src="img/CS_synth_diag.png" style="width:100%">
+				    <figcaption>
+					A protective atmosphere of $\bar{\text{S}}$
+					generated using sacrificial $\text{C}\bar{\text{S}}$.
+				    </figcaption>
+				</figure>
+			    </div>
+			</div>
+		    </section>
+		    <section>
+			<figure>
+			    <img src="img/Ternesite.svg" style="width:70%" >
+			    <figcaption>
+				Ternesite stability as a function of atmospheric
+				$\text{SO}_2$ concentration and temperature. Contours
+				are free energy curves. The zone in green is the
+				stable region of formation. Note, $\text{O}_2$ also
+				plays an important role as $\text{S}\text{O}_3$ is
+				present as $\text{S}\text{O}_2+\frac{1}{2}\text{O}_2$
+				in the atmosphere.</figcaption>
+			</figure>
+		    </section>
+		    <section>
+			<ul>
+			    <li>Ternesite is only stable for a range of
+				$\text{S}\text{O}_2$ partial pressures: previous tubular
+				furnace experiments were always either too rich or too
+				lean in $\text{S}\text{O}_2$.
+				<small>T. Hanein, I. Galan Garcia, F. P. Glasser, S. Skalamprinos, A. Elhoweris, M.-E. Imbabi, and Bannerman, “Stability of ternesite and the production at scale of ternesite-based clinkers,” <i>Cement Concrete Res.</i>, <b>98</b>, 91-100 (2017)</small>
+			    </li>
+			    <li class="fragment">
+				Targeted firings in the "goldilocks" zone formed
+				ternesite at high purity in a single stage (allowing
+				further $C_p$ analysis via DSC).</li>
+			    <li class="fragment">
+				Simple Bogue-style equations are dangerous to
+				use for $\text{C}\bar{\text{S}}\text{A}$, as the
+				atmospheric effects are not trivial.</li>
+			    <li class="fragment">
+				Similar effects are present for
+				ye'elimite, thus kiln <b>atmospheres</b> are critical
+				in $\text{C}\bar{\text{S}}\text{A}$
+				synthesis.
+			    </li>
+			    <li class="fragment">
+				Its clear that the atmosphere is
+				important in OPC at lower temperatures
+				for calcination, but we also see
+				strong effects on spurrite stability!</li>
+			</ul>
+		    </section>
+		    <section>
+			<figure>
+			    <img src="img/Spurrite.svg" style="width:60%" >
+			    <figcaption>
+				Spurrite stability as a function of atmospheric
+				$\text{CO}_2$ concentration and temperature. The
+				zone in green is the stable region of
+				formation. Spurrite can form rings thus these conditions should be avoided.</figcaption>
+			</figure>	      
+		    </section>
+		    <section>
+			<figure>
+			    <img src="img/Taylor.svg" width="100%">
+			    <figcaption>
+				The current thermodynamic database
+				applied to a typical OPC production
+				kiln conditions. Spurrite is stable
+				according to SimCem but the
+				approximate diagram from Taylor's
+				Cement Chemistry includes kinetic
+				effects which limit the quantity of
+				spurrite formed (which may not be
+				relevant to rings due to their
+				localisation of mass). This also
+				explains the sharp transitions in
+				SimCem's computed diagram.</figcaption>
+			</figure>
+		    </section>
+		    <section>
+			<figure>
+			    <object type="image/svg+xml" data="img/CAS.svg" width="100%" class="stretch">
+				Your browser does not support SVG
+			    </object>
+			    <figcaption>
+				Comparison of ternary CAS diagrams
+				from SimCem (sides) and from Taylor's
+				Cement Chemistry (centre). The left
+				diagram agrees with literature (Sahu
+				and Majling 1993) but a changes in
+				$\text{C}_{12}\text{A}_7$ and
+				$\text{C}_2\text{AS}$ co-existence
+				appears in our results at higher
+				temperatures.</figcaption>
+			</figure>
+		    </section>
+		</section>
+		<section>
+		    <section>	    
+			<div style="display:flex;align-items:center;">
+			    <div style="flex: 0 0 75%; border-right:2px solid black;">
+				<ul>
+				    <li>
+					Thermodynamics is only one
+					piece of the high-temperature
+					clinker puzzle.</li>
+				    <li class="fragment">
+					All 23 GCP pilot trial points were designed using
+					thermodynamics and were mostly successful.</li>
+				    <li class="fragment">
+					One of the &ldquo;challenging&rdquo; trial
+					points at a target temperature of $1300^\circ$C
+					is examined. The target was ye'elimite
+					using high alumina clay instead of bauxite.<table class="fragment" style="margin:0;">
+					<thead>
+					    <tr><td>Phase</td><td>$\text{C}_4\text{A}_3\bar{\text{S}}$</td><td>$\text{C}_2\text{S}$</td><td>$\text{C}_5\text{S}_2\bar{\text{S}}$</td><td>$\text{C}\bar{\text{S}}$</td></tr>
+					</thead>
+					<tbody>
+					    <tr><td>Thermodynamics</td><td>33%</td><td>55%</td><td>0%</td><td>0%</td></tr>
+					    <tr><td>XRD analysis</td><td>34%</td><td>44%</td><td>14%</td><td>3%</td></tr>
+					</tbody>
+					</table>
+				    </li>
+				    <li class="fragment">
+					Thermodynamics fails to predict the appearance of
+					ternesite. What does thermodynamics miss?</li>
+				</ul>
+			    </div>
+			    <div style="flex:1;">
+				<img src="img/window.jpg" width="611" height="1072" style="float:right;width:100%;">
+			    </div>
+			</div>
+		    </section>
+		</section>
+		<section id="#kilnmodel" style="height:100%;width:100%;">
+		    <section>
+			<ul>
+			    <li>
+				Although kinetics are a factor (more
+				so at low temperatures), our
+				experience shows understanding the <b>actual</b> rather
+				than targeted processing
+				conditions/temperature is far more
+				important.</li>
+			    <li class="fragment">
+				Also, heat transfer is controlled via
+				fuel/air rates, which changes the
+				atmosphere within the kiln. If the
+				atmosphere plays a role, then heat
+				transfer is inextricably linked with
+				the clinker thermodynamics.</li>
+			    <li class="fragment"> A combined
+				thermodynamics and kiln heat-transfer
+				model has been developed to target
+				these issues.</li>
+			</ul>
+		    </section>
+		    <section>
+			<figure>
+			    <object type="image/svg+xml" data="img/kiln_balance.svg" width="100%" >
+				Your browser does not support SVG
+			    </object>
+			    <figcaption>
+				One-dimensional heat transfer model
+				breaks the kiln into slices with
+				enthalpic homogenised temperatures for
+				the solid and gas phases. Our model
+				was optimised against a database of
+				kiln studies. See our paper for more
+				information. <small>T. Hanein, F. P. Glasser, and M. N. Bannerman, “One-dimensional steady-state thermal model for rotary kilns used in the manufacture of cement,” <i>Adv. Appl. Ceram.</i>, <b>116</b>(4), 207-215 (2017)</small></figcaption>
+			</figure>
+		    </section>
+		    <section>
+			<div style="display:flex;align-items:center;">
+			    <div style="flex: 0 0 70%; border-right:2px solid black;">
+				<ul>
+				    <li>
+					Our kiln model is fully
+					predictive: inlet gas
+					temperature from adiabatic
+					flame calculation, solids at
+					room temperature. No fitting.</li>
+				    <li class="fragment">
+					It is difficult to get <i>direct</i> thermal
+					measurements from production kilns:
+					<ul>
+					    <li class="fragment">
+						Surface temperatures and exit bed temperature are
+						measured via optical pyrometry (which was also
+						used to control the kiln temperature).
+					    </li>
+					    <li class="fragment">
+						Internal temperatures via thermocouple wells
+						(fixed to wall, so they rotate in and out of the
+						bed).
+					    </li>
+					</ul>
+				    </li>
+				</ul>
+			    </div>
+			    <div style="flex:1;">
+				<img src="img/theo_sampling.png" width="611" height="1072" style="float:right;width:100%;">
+			    </div>
+			</div>
+		    </section>
+		    <section>
+			<figure>
+			    <img src="img/KDOTP21r.svg" style="width:60%">
+			    <figcaption>
+				Symbols are thermocouples (pentagons),
+				outer surface measurements (hexagons),
+				or pyrometry through the burner window
+				(diamond). The bed does not cover the
+				last two thermocouples which is why
+				they've been assigned to the gas
+				phase.
+			    </figcaption>
+			</figure>
+		    </section>
+		    <section>
+			<figure>
+			    <object type="image/svg+xml" data="img/phasediag.svg" width="65%" class="stretch">
+				Your browser does not support SVG
+			    </object>
+			    <figcaption>
+				Stable phases as a function of temperature under the
+				predicted kiln atmosphere. Temperature ranges have
+				been extended for illustration. </figcaption>
+			</figure>
+		    </section>
+		    <section>
+			<figure>
+			    <object type="image/svg+xml" data="img/phasediag_overlay.svg" width="65%" class="stretch">
+				Your browser does not support SVG
+			    </object>
+			    <figcaption>
+				As optics report surface temperature (maximum)
+				and kiln model gives enthalpic average, a temperature
+				distribution centred about this explains the results. </figcaption>a
+			</figure>
+		    </section>
+		</section>
+		<section id="Conclusions">
+		    <h2>Conclusions</h2>
+		    <ul>
+			<li>
+			    Simple equilibrium thermodynamic models
+			    are surprisingly powerful.</li>
+			<li class="fragment">
+			    Atmospheric control is crucial in modern
+			    cement kilns.</li>
+			<li class="fragment">
+			    Combined thermal and thermodynamic models are predictive.
+			</li>
+			<li class="fragment">
+			    New processes can be designed or old
+			    debugged/optimized.</li>
+			<li class="fragment">
+			    Lots of interesting future work (e.g., solid solutions,
+			    bed models, economics, <b>carbon calculations</b>, plant
+			    optimisation).<small>T. Hanein, J. L. Galvez-Martos, and M. N. Bannerman, “Carbon footprint of calcium sulfoaluminate clinker production,” <i>J. Clean. Prod.</i>, <b>172</b>, 2278–2287 (2018)</small>
+			</li>
+			<li class="fragment">
+			    What tools would you like to see on <a href="http://SimCem.com">SimCem.com</a>?</li>
+		    </ul>
+		</section>
+		<section>
+		    <h3>Acknowledgements</h3>
+		    <ul>
+			<li>
+			    Thanks to all the members of the GCP team for their
+			    input over the years.
+			</li>
+			<li>
+			    Thank you to the Gulf Organization for Research and
+			    Development (GORD), Qatar for their the financial
+			    support provided by the through research grant number
+			    ENG016RGG11757.
+			</li>
+			<li>
+			    Thanks to Dr Theodore Hanein in particular who was the
+			    driving force behind the work.
+			</li>
+			<li>
+			    Thank you to IBU-tech and their team for their support
+			    during the trials.
+			</li>
+		    </ul>
+		</section>
+		
+		<section id="#Appendix">
+		    <section>
+			<h2>Appendix</h2>
+		    </section>
+		    <section>
+			<h2>Ye'elemite</h2>
+			<figure>
+			    <object type="image/svg+xml" data="img/Yeelimite.svg" width="80%" class="stretch">
+				Your browser does not support SVG
+			    </object>
+			    <figcaption>
+				The regions of stability for Ye'elimite.
+			    </figcaption>
+			</figure>
+		    </section>
+		</section>
+	    </div>
+	</div>
+	<script src="reveal.js/js/reveal.js"></script>
+	<script src="reveal.js/lib/js/head.min.js"></script>
+	<script src="reveal.js/js/reveal.js"></script>
+	<script>
+	 Reveal.initialize({
+	     //This width and height allows printing to pdf at A4 and is slightly widescreen to give the best all round size
+	     width:1280,height:720,margin:0.1, minScale:0.2, maxScale:1.5,
+	     slideNumber: 'c / t',
+	     history: true,
+	     transition: 'slide',
+	     backgroundTransition: 'fade',
+	     pdfMaxPagesPerSlide: 1,
+	     controls:false,
+	     math: {
+		 mathjax: 'MathJax/MathJax.js', 
+		 config: 'TeX-AMS-MML_HTMLorMML'
+	     },
+	     dependencies: [
+		 // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+		 { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+		 // Interpret Markdown in <section> elements
+		 { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		 { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+		 // Syntax highlight for <code> elements
+		 { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+		 // Zoom in and out with Alt+click
+		 { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+
+		 // Speaker notes
+		 { src: 'reveal.js/plugin/notes/notes.js', async: true },
+
+		 // Remote control your reveal.js presentation using a touch device
+		 // { src: 'reveal.js/plugin/remotes/remotes.js', async: true },
+
+		 // MathJax
+		 { src: 'reveal.js/plugin/math/math.js',
+		   async: false	  }
+	     ]
+	 });
+	</script>
+	<script>
+	 //      $(function () {
+	 //    // on page load  replace all src URLs
+	 //
+	 //    $('.animated-gif').each(function (i, e) {
+	 //        disableGif(e)
+	 //    });
+	 //});
+	 //Reveal.addEventListener('slidechanged', initAnimatedGifs);
+	 //Reveal.addEventListener('ready', initAnimatedGifs);
+	 //
+	 //function initAnimatedGifs(event) {
+	 //    $('.animated-gif', event.currentSlide).each(function (i, e) {
+	 //        enableGif(e)
+	 //    });
+	 //
+	 //    if (event.previousSlide)
+	 //        $('.animated-gif', event.previousSlide).each(function (i, e) {
+	 //            disableGif(e)
+	 //
+	 //        });
+	 //}
+	 //
+	 //function enableGif(e) {
+	 //    var src = $(e).attr("src")
+	 //    $(e).attr('src', src.replace('-image.gif', '.gif'));
+	 //
+	 //
+	 //}
+	 //function disableGif(e) {
+	 //    var src = $(e).attr("src")
+	 //    $(e).attr('src', src.replace('.gif', '-image.gif'));
+	 //
+	 //}
+	</script>
+    </body>
+</html>
+<!---
+Bannerman, MN., Strobl, S., Formella, A. & Poeschel, T. (2014). 'Stable algorithm for event detection in event-driven particle dynamics'. Computational Particle Mechanics, vol 1, no. 2, pp. 191-198. 
+[ONLINE] DOI: 10.1007/s40571-014-0021-8 
+[LINK] http://arxiv.org/abs/1211.6718
+Thomson, C., Lue, L. & Bannerman, MN. (2014). 'Mapping continuous potentials to discrete forms'. The Journal of Chemical Physics, vol 140, no. 3, 034105. 
+[ONLINE] DOI: 10.1063/1.4861669
+Kollmer, JE., Sack, A., Heckel, M., Zimber, F., Mueller, P., Bannerman, MN. & Poeschel, T. (2013). 'Collective Granular Dynamics in a Shaken Container at Low Gravity Conditions'. American Institute of Physics Conference Proceedings, vol 1542, pp. 811-814. 
+[ONLINE] DOI: 10.1063/1.4812055
+Bannerman, MN., Kollmer, JE., Sack, A., Heckel, M., Mueller, P. & Poeschel, T. (2011). 'Movers and shakers: Granular damping in microgravity'. Physical Review. E, Statistical, Nonlinear and Soft Matter Physics, vol 84, no. 1, 011301. 
+[ONLINE] DOI: 10.1103/PhysRevE.84.011301
+Campbell Bannerman, MN., Sargant, R. & Lue, L. (2011). 'DynamO: a free O(N) general event-driven molecular dynamics simulator'. Journal of Computational Chemistry, vol 32, no. 15, pp. 3329-3338. 
+[ONLINE] DOI: 10.1002/jcc.21915
+Bannerman, MN. & Lue, L. (2010). 'Exact on-event expressions for discrete potential systems'. The Journal of Chemical Physics, vol 133, no. 12. 
+[ONLINE] DOI: 10.1063/1.3486567
+Bannerman, MN., Lue, L. & Woodcock, LV. (2010). 'Thermodynamic pressures for hard spheres and closed-virial equation-of-state'. The Journal of Chemical Physics, vol 132, no. 8, 084507. 
+[ONLINE] DOI: 10.1063/1.3328823
+Hoover, WG., Hoover, CG. & Bannerman, MN. (2009). 'Single-speed molecular dynamics of hard parallel squares and cubes'. Journal of Statistical Physics, vol 136, no. 4, pp. 715-732. 
+[ONLINE] DOI: 10.1007/s10955-009-9795-0
+Bannerman, MN., Magee, JE. & Lue, L. (2009). 'Structure and stability of helices in square-well homopolymers'. Physical Review. E, Statistical, Nonlinear and Soft Matter Physics, vol 80, no. 2, 021801. 
+[ONLINE] DOI: 10.1103/PhysRevE.80.021801
+Bannerman, MN. & Lue, L. (2009). 'Transport properties of highly asymmetric hard-sphere mixtures'. The Journal of Chemical Physics, vol 130, no. 16, 164507. 
+[ONLINE] DOI: 10.1063/1.3120488
+---!>
