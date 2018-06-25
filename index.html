@@ -87,38 +87,90 @@
 		</section>
 		<section style="height:100%;width:100%;">
 		    <section>
-			<h2>Why cement?</h2>
-			<p class="fragment">
+			<p>
 			    <i>Scientists discover the world that exists; engineers create the world that never was.</i> <br/>
 			    T. von Kármán</p>
 			<p class="fragment">
-			    <!--  We've been imagining a lot more world lately --->
 			    We've being creating a lot of new world recently:<br/>
-			    <em>In the last two years (2016-17) china's
-			    total cement sales equaled the USA's in
-				the entire last century (1900-2000).
-			    </em>
+			    <em>4.1B tons of cement produced in 2017
+			    $\approx 0.5$ tons per person. The most
+			    ubiquitous product after water. </em>
+			</p>
+			<p class="fragment">
+			    <em>In the last two years (2016-17)
+			    china's total cement sales equaled the USA
+			    over the entire last century (1900-2000).</em>
+			</p>
+			<p class="fragment">
+			    <em>5% of manmade $\text{CO}_2$ emmissions are
+				from cement production.</em>
 			</p>
 		    </section>
 		    <section>
-			<ul style="padding-top:2em;">
+			<ul>
 			    <li>
-				(2013-2016) £3.3M <b>G</b>reen-<b>C</b>oncrete <b>P</b>roject <b>(GCP)</b>
-				sponsored by the Gulf Organisation for Research
-				&amp; Development, Qatar. PIs: F. P. Glasser and
-				M. S. Imbabi, (10+ PDRAs, 10+PhDs @ Aberdeen).</li>
+				75% by weight of typical cement clinker is made up of alite and belite:
+				<!-- C2S 0.1722392 kg/mol (19%)  C3S 0.2283 kg/mol (55%) -->
+				\begin{align}
+				8\,\text{Ca}\text{C}\text{O}_3+3\,\text{Si}\text{O}_2+\ldots
+				\underset{1450^\circ\text{C}}{\rightleftarrows}
+				\text{Ca}_2\,\text{Si}\text{O}_4 +
+				2\,\text{Ca}_3\text{Si}\text{O}_5 + \mathbf{8\,\text{C}\text{O}_2}
+				\ldots \end{align}
+			    </li>
 			    <li class="fragment">
-				One PhD student (Dr Theodore Hanein), three years
-				(at 10%), and £250k to take a
-				partially-verified lab-scale sulfur-burning
-				$\text{C}\bar{\text{S}}\text{A}$ process through
-				pilot trials and design a full-scale process.</li>
+				We need alternative clinker chemistry
+				to reduce lime usage
+				($\text{Ca}\text{C}\text{O}_3$), and
+				lower clinkering temperatures to
+				mitigate $\text{C}\text{O}_2$
+				emissions. We also need alternative fuels.
+			    </li>
+			    <li class="fragment">
+				Prof. Glasser suggested burning sulfur
+				to generate Calcium SulfoAluminate
+				(CSA) cements:
+
+				<!-- C4A3$ (70%) 0.610 kg/mol = 114.75  C2S 0.1722392 kg/mol (19%) = 110.3111706 -->
+				\begin{multline}
+				\mathbf{\left(\text{S}+1.5\,\text{O}_2\right)}+
+				6\,\text{Ca}\text{C}\text{O}_3+\text{Si}\text{O}_2+3\,\text{Al}_2\text{O}_3+\ldots
+				\\
+				\underset{1250^\circ\text{C}}{\rightleftarrows}
+				\text{Ca}_2\,\text{Si}\text{O}_4 +
+				\text{Ca}_4\text{Al}_6\text{S}\text{O}_{10} +
+				\mathbf{6\,\text{C}\text{O}_2} \ldots
+				\end{multline}
+
+				Lower temperatures, less $\text{C}\text{O}_2$ per kg clinker<small><sup>1</sup></small> due
+				to lower lime factor, and able to burn
+				sulfur for heat!
+
+				<small>
+				    <sup><small>1</small></sup>Assuming
+				    70%w/w C4A3S, 20%w/w C2S clinker is
+				    mass equivalent to OPC clinker. Very rough assumption.</small>
+			    </li>
 			</ul>
 		    </section>
-		    <section>
-			<div style="display:flex;align-items:center;font-size:65%;">
+		    <section style="margin:0;height:100%;width:100%;padding:0;position:relative">
+			<img src="img/sulfurmountain.svg" style="height:100%; border:0;">
+			<div style="position:absolute; display:inline-block; width:50%; text-align:center; right:0; bottom:0; background-color:#000000aa; color:white;border-radius: 15px 0 0 0; padding:5px; font-size:50%;">
+			    There's plenty of "waste" sulfur in the
+			    world to meet even cement's demand, and the
+			    LCA is positive.
+			    <br/>
+			    T. Hanein, J. L. Galvez-Martos, and
+			    M. N. Bannerman, “Carbon footprint of calcium
+			    sulfoaluminate clinker production,”
+			    J. Clean. Prod., 172, 2278–2287 (2018)</div>
+		    </section>
+		    <section style="font-size:65%;">
+			<h3>£3.3M Green Concrete Project</h3>
+			<div style="display:flex;align-items:center;">
 			    <div style="flex: 0 0 33%; border-right:2px solid black;">
-				<h3>Formulations team<br/>Prof. F. Glasser</h3>
+				<h3>Formulations team</h3>
+				Prof. F. Glasser
 				<img src="img/kiln.jpg" width="500" height="312" >
 				<ul>
 				    <li><b>Atmospheric</b> control tubular furnace.</li>
@@ -129,18 +181,23 @@
 				    <li>Limited testing of raw mixes and products.</li>
 				</ul>
 			    </div>
-			    <div style="flex:1;padding-top:3em;" class="fragment" data-fragment-index="2">
-				<h3>Production team<br/>Me</h3>
+			    <div style="flex:1;" class="fragment" data-fragment-index="2">
+				<h3>Production team</h3>
+				Me and T. Hanein
 				<img src="img/trials.jpg" width="1637" height="871">
 				<ul>
-				    <li>Full-scale sulfur-buring process design.</li>
+				    <li>Full-scale process design.</li>
 				    <li>Pilot trials, IBU-tech, Weimar
 					to produce clinker for product
 					testing and process verification.</li>
+				    <li>
+					<b>Thermodynamics and heat
+					    transfer models.</b></li>
 				</ul>
 			    </div>
 			    <div style="flex:1; border-left:2px solid black;" class="fragment" data-fragment-index="1">
-				<h3>Products/Hydration team<br/>Dr. M. Imbabi</h3>
+				<h3>Products/Hydration team</h3>
+				Dr. M. Imbabi<br/>
 				<img src="img/products1.png" style="width:40%; display:inline-block;">
 				<img src="img/products2.png" style="width:40%; display:inline-block;">
 				<img src="img/products3.png" style="width:40%; display:inline-block;">
@@ -154,33 +211,8 @@
 			    </div>
  			</div>
 			<p class="fragment" data-fragment-index="3">
-			    (and there was a recycled aggregates team led by Prof. Rod Jones)
+			    (and there was a recycled aggregates team led by Prof. Rod Jones at Dundee)
 			</p>
-		    </section>
-		    <section>
-			<ul>
-			    <li>
-				We achieved all our goals in 2.5
-				years, with <£100k spent on 20+ trial
-				points (>15kg product each, one 100kg
-				production run), thanks to a few key
-				aspects:<ul>
-				<li class="fragment">Careful
-				    <b>atmospherically-controlled</b>
-				    tubular furnace experiments
-				    testing thermodynamic
-				    predictions.</li>
-				<li class="fragment">Extensive predictive
-				    thermodynamic modelling of tubular furnace and
-				    pilot kilns (incl. <b>atmospheres</b>).</li>
-				</ul>
-			    </li>
-			    <li class="fragment">
-				If I'd read the literature first, I
-				would have never attempted it or I
-				would have asked for more time and
-				money. </li>
-			</ul>
 		    </section>
 		</section>
 		<section>
@@ -215,38 +247,11 @@
 			</li>
 			<li class="fragment">
 			    NASA shares rocket/ICBM calculations, can
-			    we share a cement database?</li>
+			    we?</li>
 		    </ul>
 		</section>
 		<section style="height:100%;width:100%;">
 		    <iframe src="http://simcem.com" style="height:100%; width:100%;"></iframe>
-		</section>
-		<section>
-		    <ul>
-			<li>The database uses the following main sources of information:
-			    <ul>
-				<li>NASA CEA database for combustion/rocketry.</li>
-				<li>Holland and Powell (2011) database for petrological mineralogy.</li>
-				<li>Around 80 individual sources added by hand.</li>
-				<li>Primarily stochiometric phases, but
-				    end-member models from Holland and
-				    Powell are nearly there.</li>
-				<li>
-				    Some mineralisation accounted for
-				    using entropic effects only
-				    (thanks to Duncan for the idea).</li>
-				<li>
-				    Melt data is currently incomplete
-				    so its disabled.</li>
-			    </ul>
-			</li>
-			<li class="fragment">
-			    The free-energy minimizer uses a unique
-			    generating function approach and my own
-			    compile-time computer algebra library (<a href="http://github.com/toastedcrumpets/stator">Stator</a>), combined with a
-			    range of general optimizers (IPOpt, NLOPT/SLSQP)
-			    with some modifications (more information on request).</li>
-		    </ul>
 		</section>
 		<section style="height:100%;width:100%;">
 		    <section>
@@ -576,6 +581,68 @@
 			<h2>Appendix</h2>
 		    </section>
 		    <section>
+			<ul style="padding-top:2em;">
+			    <li>
+				(2013-2016) £3.3M <b>G</b>reen-<b>C</b>oncrete <b>P</b>roject <b>(GCP)</b>
+				sponsored by the Gulf Organisation for Research
+				&amp; Development, Qatar. PIs: F. P. Glasser and
+				M. S. Imbabi, (10+ PDRAs, 10+PhDs @ Aberdeen).</li>
+			    <li class="fragment">
+				One PhD student (Dr Theodore Hanein), three years
+				(at 10%), and £250k to take a
+				partially-verified lab-scale sulfur-burning
+				$\text{C}\bar{\text{S}}\text{A}$ process through
+				pilot trials and design a full-scale process.</li>
+			</ul>
+		    </section>
+		    <section>
+			<ul>
+			    <li>
+				We achieved all our goals in 2.5
+				years, with <£100k spent on 20+ trial
+				points (>15kg product each, one 100kg
+				production run), thanks to a few key
+				aspects:<ul>
+				<li class="fragment">Careful
+				    <b>atmospherically-controlled</b>
+				    tubular furnace experiments
+				    testing thermodynamic
+				    predictions.</li>
+				<li class="fragment">Extensive predictive
+				    thermodynamic modelling of tubular furnace and
+				    pilot kilns (incl. <b>atmospheres</b>).</li>
+				</ul>
+			    </li>
+			</ul>
+		    </section>
+		    <section>
+			<ul>
+			    <li>The database uses the following main sources of information:
+				<ul>
+				    <li>NASA CEA database for combustion/rocketry.</li>
+				    <li>Holland and Powell (2011) database for petrological mineralogy.</li>
+				    <li>Around 80 individual sources added by hand.</li>
+				    <li>Primarily stochiometric phases, but
+					end-member models from Holland and
+					Powell are nearly there.</li>
+				    <li>
+					Some mineralisation accounted for
+					using entropic effects only
+					(thanks to Duncan Herefort for the idea).</li>
+				    <li>
+					Melt data is currently incomplete
+					so its disabled.</li>
+				</ul>
+			    </li>
+			    <li class="fragment">
+				The free-energy minimizer uses a unique
+				generating function approach and my own
+				compile-time computer algebra library (<a href="http://github.com/toastedcrumpets/stator">Stator</a>), combined with a
+				range of general optimizers (IPOpt, NLOPT/SLSQP)
+				with some modifications (more information on request).</li>
+			</ul>
+		    </section>
+		    <section>
 			<h2>Ye'elemite</h2>
 			<figure>
 			    <object type="image/svg+xml" data="img/Yeelimite.svg" width="80%" class="stretch">
@@ -595,7 +662,7 @@
 	<script>
 	 Reveal.initialize({
 	     //This width and height allows printing to pdf at A4 and is slightly widescreen to give the best all round size
-	     width:1280,height:720,margin:0.1, minScale:0.2, maxScale:1.5,
+	     width:1280,height:720,
 	     slideNumber: 'c / t',
 	     history: true,
 	     transition: 'slide',
