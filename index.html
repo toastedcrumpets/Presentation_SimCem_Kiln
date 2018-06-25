@@ -89,27 +89,35 @@
 		    <section>
 			<p>
 			    <i>Scientists discover the world that exists; engineers create the world that never was.</i> <br/>
-			    T. von Kármán</p>
-			<p class="fragment">
-			    We've being creating a lot of new world recently:<br/>
-			    <em>4.1B tons of cement produced in 2017
-			    $\approx 0.5$ tons per person. The most
-			    ubiquitous product after water. </em>
 			</p>
-			<p class="fragment">
-			    <em>In the last two years (2016-17)
-			    china's total cement sales equaled the USA
-			    over the entire last century (1900-2000).</em>
+			<p style="text-align:right">
+			    T. von Kármán
 			</p>
-			<p class="fragment">
-			    <em>5% of manmade $\text{CO}_2$ emmissions are
-				from cement production.</em>
-			</p>
+			<ul>
+			    <li class="fragment">
+				We've being creating a lot of new world recently:
+				<ul>
+				    <li><em>4.1B tons of cement produced in 2017
+					$\approx 0.5$ tons per person. The most
+					ubiquitous product after water. </em>
+				    </li>
+				    <li class="fragment">
+					<em>In the last two years (2016-17)
+					    china's total cement sales equaled the USA
+					    over the entire last century (1900-2000).</em>
+				    </li>
+				    <li class="fragment">
+					<em>5% of manmade $\text{CO}_2$ emmissions are
+					    from cement production.</em>
+				    </li>
+				</ul>
+			    </li>
+			</ul>
 		    </section>
 		    <section>
 			<ul>
 			    <li>
-				75% by weight of typical cement clinker is made up of alite and belite:
+				75% by weight of typical cement clinker is made up of belite and alite:
 				<!-- C2S 0.1722392 kg/mol (19%)  C3S 0.2283 kg/mol (55%) -->
 				\begin{align}
 				8\,\text{Ca}\text{C}\text{O}_3+3\,\text{Si}\text{O}_2+\ldots
@@ -120,7 +128,7 @@
 			    </li>
 			    <li class="fragment">
 				We need alternative clinker chemistry
-				to reduce lime usage
+				to reduce limestone usage
 				($\text{Ca}\text{C}\text{O}_3$), and
 				lower clinkering temperatures to
 				mitigate $\text{C}\text{O}_2$
@@ -166,7 +174,7 @@
 			    J. Clean. Prod., 172, 2278–2287 (2018)</div>
 		    </section>
 		    <section style="font-size:65%;">
-			<h3>£3.3M Green Concrete Project</h3>
+			<h3>£3.3M Green Concrete Project (GCP)</h3>
 			<div style="display:flex;align-items:center;">
 			    <div style="flex: 0 0 33%; border-right:2px solid black;">
 				<h3>Formulations team</h3>
@@ -253,9 +261,32 @@
 		<section style="height:100%;width:100%;">
 		    <iframe src="http://simcem.com" style="height:100%; width:100%;"></iframe>
 		</section>
+		<section>
+		    <h3>Thermodynamic solver</h3>
+		    <ul>
+			<li>
+			    Custom C++ equation-oriented solver. Thermodynamic models are expressed as a
+			    free-energy function,
+			    
+			    \begin{align}
+			    G_\alpha\left(T,\, p, \left\{N_i\right\}^N_\alpha\right) &  & A_\alpha\left(T,\, V, \left\{N_i\right\}^N_\alpha\right)
+			    \end{align}
+			</li>
+			<li class="fragment">
+			    A custom compile-time computer algebra
+			    library, <a href="http://github.com/toastedcrumpets/stator">stator</a>,
+			    is used to generate arbitrary
+			    thermodynamic derivatives (fallback to Automatic
+			    Differentiation when required).</li>
+			<li class="fragment">
+			    Coupled heat transfer and kinetics
+			    expressed as constrained minimisation and
+			    solved directly (no outer loops).</li>
+		    </ul>
+		</section>
 		<section style="height:100%;width:100%;">
 		    <section>
-			<h3>Example applications</h3>
+			<h3>Example application</h3>
 			<div style="display:flex;align-items:center;">
 			    <div style="flex: 0 0 60%">
 				<ul>
@@ -279,9 +310,6 @@
 					</div>
 
 				    </li>
-				    <li class="fragment">
-					What does thermodynamics tell us?
-				    </li>
 				</ul>
 			    </div>
 			    <div style="flex:1;" >
@@ -297,7 +325,7 @@
 		    </section>
 		    <section>
 			<figure>
-			    <img src="img/Ternesite.svg" style="width:70%" >
+			    <img src="img/Ternesite.svg" style="width:65%" >
 			    <figcaption>
 				Ternesite stability as a function of atmospheric
 				$\text{SO}_2$ concentration and temperature. Contours
@@ -330,22 +358,7 @@
 				in $\text{C}\bar{\text{S}}\text{A}$
 				synthesis.
 			    </li>
-			    <li class="fragment">
-				Its clear that the atmosphere is
-				important in OPC at lower temperatures
-				for calcination, but we also see
-				strong effects on spurrite stability!</li>
 			</ul>
-		    </section>
-		    <section>
-			<figure>
-			    <img src="img/Spurrite.svg" style="width:60%" >
-			    <figcaption>
-				Spurrite stability as a function of atmospheric
-				$\text{CO}_2$ concentration and temperature. The
-				zone in green is the stable region of
-				formation. Spurrite can form rings thus these conditions should be avoided.</figcaption>
-			</figure>	      
 		    </section>
 		    <section>
 			<figure>
@@ -522,9 +535,11 @@
 				Your browser does not support SVG
 			    </object>
 			    <figcaption>
-				As optics report surface temperature (maximum)
-				and kiln model gives enthalpic average, a temperature
-				distribution centred about this explains the results. </figcaption>a
+				As optics report surface temperature
+				(maximum) and kiln model gives
+				enthalpic average, a temperature
+				distribution centred about this
+				explains the results. </figcaption>
 			</figure>
 		    </section>
 		</section>
@@ -548,8 +563,6 @@
 			    bed models, economics, <b>carbon calculations</b>, plant
 			    optimisation).<small>T. Hanein, J. L. Galvez-Martos, and M. N. Bannerman, “Carbon footprint of calcium sulfoaluminate clinker production,” <i>J. Clean. Prod.</i>, <b>172</b>, 2278–2287 (2018)</small>
 			</li>
-			<li class="fragment">
-			    What tools would you like to see on <a href="http://SimCem.com">SimCem.com</a>?</li>
 		    </ul>
 		</section>
 		<section>
@@ -641,6 +654,16 @@
 				range of general optimizers (IPOpt, NLOPT/SLSQP)
 				with some modifications (more information on request).</li>
 			</ul>
+		    </section>
+		    <section>
+			<figure>
+			    <img src="img/Spurrite.svg" style="width:60%" >
+			    <figcaption>
+				Spurrite stability as a function of atmospheric
+				$\text{CO}_2$ concentration and temperature. The
+				zone in green is the stable region of
+				formation. Spurrite can form rings thus these conditions should be avoided.</figcaption>
+			</figure>	      
 		    </section>
 		    <section>
 			<h2>Ye'elemite</h2>
