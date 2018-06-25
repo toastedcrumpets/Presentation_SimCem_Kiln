@@ -163,15 +163,17 @@
 		    </section>
 		    <section style="margin:0;height:100%;width:100%;padding:0;position:relative">
 			<img src="img/sulfurmountain.svg" style="height:100%; border:0;">
-			<div style="position:absolute; display:inline-block; width:50%; text-align:center; right:0; bottom:0; background-color:#000000aa; color:white;border-radius: 15px 0 0 0; padding:5px; font-size:50%;">
-			    There's plenty of "waste" sulfur in the
+			<div style="position:absolute; display:inline-block; width:50%; text-align:center; right:0; bottom:0; background-color:#000000aa; color:white;border-radius: 15px 0 0 0; padding:5px; font-size:85%;">
+			    There's plenty of &ldquo;surplus&rdquo; sulfur in the
 			    world to meet even cement's demand, and the
 			    LCA is positive.
-			    <br/>
-			    T. Hanein, J. L. Galvez-Martos, and
-			    M. N. Bannerman, “Carbon footprint of calcium
-			    sulfoaluminate clinker production,”
-			    J. Clean. Prod., 172, 2278–2287 (2018)</div>
+			    <small>
+				T. Hanein, J. L. Galvez-Martos, and
+				M. N. Bannerman, “Carbon footprint of calcium
+				sulfoaluminate clinker production,”
+				J. Clean. Prod., 172, 2278–2287 (2018)
+			    </small>
+			</div>
 		    </section>
 		    <section style="font-size:65%;">
 			<h3>£3.3M Green Concrete Project (GCP)</h3>
@@ -191,7 +193,7 @@
 			    </div>
 			    <div style="flex:1;" class="fragment" data-fragment-index="2">
 				<h3>Production team</h3>
-				Me and T. Hanein
+				Myself and (now Dr.) T. Hanein
 				<img src="img/trials.jpg" width="1637" height="871">
 				<ul>
 				    <li>Full-scale process design.</li>
@@ -265,7 +267,7 @@
 		    <h3>Thermodynamic solver</h3>
 		    <ul>
 			<li>
-			    Custom C++ equation-oriented solver. Thermodynamic models are expressed as a
+			    Original C++ equation-oriented solver (using IPOPT). Thermodynamic models are expressed as a
 			    free-energy function,
 			    
 			    \begin{align}
@@ -273,15 +275,20 @@
 			    \end{align}
 			</li>
 			<li class="fragment">
-			    A custom compile-time computer algebra
+			    An original compile-time computer algebra
 			    library, <a href="http://github.com/toastedcrumpets/stator">stator</a>,
 			    is used to generate arbitrary
-			    thermodynamic derivatives (fallback to Automatic
-			    Differentiation when required).</li>
+			    thermodynamic derivatives incl. Hessian.
+			</li>
 			<li class="fragment">
 			    Coupled heat transfer and kinetics
 			    expressed as constrained minimisation and
 			    solved directly (no outer loops).</li>
+			<li class="fragment">
+			    Automatic derivatives of Lagrangian yields
+			    thermodynamic properties under constraints
+			    (i.e., total $C_p$, reactive thermal
+			    conductivity).</li>
 		    </ul>
 		</section>
 		<section style="height:100%;width:100%;">
@@ -399,13 +406,9 @@
 		<section>
 		    <section>	    
 			<div style="display:flex;align-items:center;">
-			    <div style="flex: 0 0 75%; border-right:2px solid black;">
+			    <div style="flex: 0 0 60%; border-right:2px solid black;">
 				<ul>
 				    <li>
-					Thermodynamics is only one
-					piece of the high-temperature
-					clinker puzzle.</li>
-				    <li class="fragment">
 					All 23 GCP pilot trial points were designed using
 					thermodynamics and were mostly successful.</li>
 				    <li class="fragment">
@@ -428,7 +431,9 @@
 				</ul>
 			    </div>
 			    <div style="flex:1;">
-				<img src="img/window.jpg" width="611" height="1072" style="float:right;width:100%;">
+				<video loop autoplay controls>
+				    <source src="img/kiln.mp4" type="video/mp4"/>
+				</video>
 			    </div>
 			</div>
 		    </section>
