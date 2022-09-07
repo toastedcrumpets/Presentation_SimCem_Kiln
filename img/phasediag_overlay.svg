@@ -18,7 +18,7 @@
    inkscape:export-filename="/home/mjki2mb2/Dropbox/phasediag.svg.png"
    inkscape:export-xdpi="207.23839"
    inkscape:export-ydpi="207.23839"
-   inkscape:version="0.92.1 r15371">
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <metadata
      id="metadata1288">
     <rdf:RDF>
@@ -46,15 +46,15 @@
      showgrid="false"
      units="px"
      inkscape:current-layer="svg2"
-     inkscape:cx="231.99216"
-     inkscape:cy="87.073497"
+     inkscape:cx="199.81208"
+     inkscape:cy="125.84468"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-height="1735"
+     inkscape:window-height="1377"
      inkscape:window-maximized="0"
-     inkscape:window-width="1596"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-width="2560"
+     inkscape:window-x="1440"
+     inkscape:window-y="291"
      inkscape:zoom="5.15847" />
   <defs
      id="defs4"
@@ -67,7 +67,7 @@
          offset="0"
          id="stop5295" />
       <stop
-         style="stop-color:#ff0000;stop-opacity:0"
+         style="stop-color:#ff0000;stop-opacity:0.804"
          offset="1"
          id="stop5297" />
     </linearGradient>
@@ -92,8 +92,15 @@
        y1="169.45803"
        x2="293.08603"
        y2="169.45803"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-6.5911016,0.19385593)" />
   </defs>
+  <path
+     style="fill:url(#linearGradient5301);fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+     d="m 227.19915,224.98587 c 34.3125,-0.38771 41.25029,-73.8353 58.95176,-112.21878 17.70146,-38.383476 4.59311,85.99173 10.7965,110.80529"
+     id="path5293"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="czc" />
   <g
      id="PolyCollection_96"
      style="fill:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
@@ -4647,12 +4654,6 @@
      id="path812"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cc" />
-  <path
-     style="fill:none;fill-rule:evenodd;stroke:#008000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100;stroke-dasharray:8, 8;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 268.1223,224.23425 0,-218.2263382"
-     id="path814"
-     inkscape:connector-curvature="0"
-     sodipodi:nodetypes="cc" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:18px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#800000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
@@ -4665,22 +4666,4 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#800000;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
        x="21.208376"
        y="-297.43713">Target/Optics</tspan></text>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:18px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#008000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
-     x="21.208378"
-     y="-272.215"
-     id="text1623-8"
-     transform="rotate(90)"><tspan
-       sodipodi:role="line"
-       id="tspan1621-6"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#008000;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
-       x="21.208378"
-       y="-272.215">Kiln Model</tspan></text>
-  <path
-     style="fill:url(#linearGradient5301);stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;fill-opacity:1"
-     d="m 233.79025,224.79201 c 34.3125,-0.38771 14.11046,-110.66793 34.52591,-110.66793 20.41545,0 0.13443,110.61143 24.75413,109.83601"
-     id="path5293"
-     inkscape:connector-curvature="0"
-     sodipodi:nodetypes="czc" />
 </svg>
