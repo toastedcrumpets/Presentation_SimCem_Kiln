@@ -21,7 +21,9 @@
 	    <script src="reveal.js/lib/js/html5shiv.js"></script>
 	<![endif]-->
     </head>
-    <body>
+    <body> 
+		<script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
 	<div class="reveal">
 	    <div class="slides" style="border:1px solid red">
 		<section style="height:100%;width:100%;">
@@ -45,7 +47,7 @@
 		</section>
 		<section style="height:100%;width:100%;">
 		    <section data-transition="slide-in none-out" style="height:100%;width:100%;">
-				<h2>A Process Engineers View</h2>
+				<h2>Process Engineer's View On Cement</h2>
 				<p>
 			    <i>Scientists discover the world that exists; engineers create
 			    the world that never was.</i> <br/>
@@ -56,16 +58,16 @@
 			<ul>
 				<li class="fragment">
 					We've being creating a lot of new world recently; 7% of
-					manmade $\text{CO}_2$ emmissions are from cement
+					manmade $\text{CO}_2$ emissions are from cement
 					production.<br/>
-					<p style="text-align:center" class="fragment"><b>Pressure on the cement industry to go-green is increasing.</b></p>
+					<p style="text-align:center" class="fragment"><b>Urgent pressure for the cement industry to go-green.</b></p>
 				</li>
 				<li style="clear:both" class="fragment">
 					In 2016 and 2017, china's total cement sales equaled the USA
 					over the entire last century (1900-2000).
 					<br/>
 					<p style="text-align:center" class="fragment"><b>The scale is so large, any
-					single solution will fail. Raw material shortages are almost guaranteed!</b></p>
+					single solution may fail just on raw material availability.</b></p>
 				</li>
 			</ul>
 		    </section>
@@ -84,12 +86,11 @@
 					per person. The second most ubiquitous product after water. </em>
 				</li>
 				<li class="fragment">
-						OPC Cement ($\approx 100$ £/ton), is cheaper than
+						OPC Cement ($\approx 50\to100$ £/ton), is cheaper than
 						deionised water <span style="white-space:nowrap">($\approx200$ £/ton)</span>, but more expensive
 						than tap water ($\approx1$ £/ton).
 					<p style="text-align:center" class="fragment"><b>No margin for any fancy
-					processing or raw materials, market for raw materials must
-					support huge volumes.</b></p>
+					processing. <br/> No margin for more expensive raw materials, and sand+limestone is very cheap.</b></p>
 					</li>
 			</ul>
 		    </section>
@@ -100,7 +101,7 @@
 				Roughly 75% by weight of typical OPC cement clinker is made up of belite and alite:
 				<!-- C2S 0.1722392 kg/mol (19%)  C3S 0.2283 kg/mol (55%) -->
 				\begin{align}
-					{\color{orangered}8\,\underset{\text{limestone}}{\text{Ca}\text{C}\text{O}_3}}+3\,\underset{\text{sand}}{\text{Si}\text{O}_2}+\ldots
+					{\color{orangered}8\,\underset{\text{limestone}}{\text{Ca}\text{C}\text{O}_3}}+3\,\underset{\text{quartz}}{\text{Si}\text{O}_2}+\ldots
 					\underset{\color{darkred}\mathbf{1450^\circ\text{C}}}{\rightleftarrows}
 					\underset{\text{belite}}{\text{Ca}_2\,\text{Si}\text{O}_4} +
 					2\,\underset{\text{alite}}{\text{Ca}_3\text{Si}\text{O}_5} + \mathbf{\color{darkred}8\,\text{C}\text{O}_2}
@@ -122,29 +123,33 @@
 				<section>
 					<h2>$\text{C}\bar{\text{S}}\text{A}$ cement</h2>
 			    <p>
-				Prof. F. P. Glasser suggested burning sulfur to generate Calcium
-				SulfoAluminate ($\text{C}\bar{\text{S}}\text{A}$) cements:
+				One solution, suggested by Prof. Glasser, is to burn sulfur to generate Calcium
+				SulfoAluminate ($\text{C}\bar{\text{S}}\text{A}$) cements, swapping alite for ye'elimite:
 
 				<!-- C4A3$ (70%) 0.610 kg/mol = 114.75  C2S 0.1722392 kg/mol (19%) = 110.3111706 -->
 				\begin{multline}
-				\mathbf{\color{Apricot}\left(\text{S}+1.5\,\text{O}_2\right)}+
-				{\color{orangered}6\,\text{Ca}\text{C}\text{O}_3}+\text{Si}\text{O}_2+3\,\text{Al}_2\text{O}_3+\ldots
+				\underset{\text{sulfur combustion}}{\mathbf{\color{Apricot}\left(\text{S}+1.5\,\text{O}_2\right)}}+
+				\underset{\text{limestone}}{\color{orangered}6\,\text{Ca}\text{C}\text{O}_3}
+				+\underset{\text{quartz}}{\text{Si}\text{O}_2}+3\,\underset{\text{bauxite}}{\text{Al}_2\text{O}_3}+\ldots
 				\\
-				\underset{1250^\circ\text{C}}{\rightleftarrows}
-				\text{Ca}_2\,\text{Si}\text{O}_4 +
-				\underset{\text{bauxite}}{\text{Ca}_4\text{Al}_6\text{S}\text{O}_{10}} +
+				\underset{\mathbf{1250^\circ\text{C}}}{\rightleftarrows}
+				\underset{\text{belite}}{\text{Ca}_2\,\text{Si}\text{O}_4} +
+				\underset{\text{ye'elimite}}{\text{Ca}_4\text{Al}_6\text{S}\text{O}_{10}} +
 				\mathbf{\color{darkred}6\,\text{C}\text{O}_2} \ldots
 				\end{multline}
 
 				Lower temperatures (vs $1450^\circ$), less $\text{C}\text{O}_2$ per kg clinker<small><sup>1</sup></small> due
 				to lower lime factor, and able to burn
 				sulfur for process heat!
-
 				<small>
 				    <sup><small>1</small></sup>Assuming
 				    70%w/w C<sub>4</sub>A<sub>3</sub>S, 20%w/w C<sub>2</sub>S clinker is
 				    mass equivalent to OPC clinker. Very rough assumption.</small>
-			    </li>
+				<br/>
+				<span class="fragment">
+					But, bauxite is relatively expensive due to competition with aluminium
+					production. We have used lower grade aluminous clays.
+				</span>
 			</ul>
 		    </section>
 		    <section style="margin:0;height:100%;width:100%;padding:0;position:relative">
@@ -176,9 +181,9 @@
 		<section>
 			<section style="font-size:65%;">
 			<h2>How to develop a new process?</h2>
-			<p>The £3.3M Green Concrete Project (GCP), funded by Gulf Organisation for Research and Development (GORD), Qatar. </p>
+			<p>£3.3M Green Concrete Project (GCP), funded by GORD in Qatar. </p>
 			<div style="display:flex;align-items:center;">
-			    <div style="flex: 0 0 50%; border-right:2px solid black;">
+			    <div style="flex: 0 0 50%; border-right:2px solid black;" class="fragment" data-fragment-index="1">
 				<p style="margin-bottom:0">Prof. Glasser et al: Chemistry team
 				<img src="img/kiln.jpg" width="500" height="312" style="width:80%">
 				</p>
@@ -225,7 +230,7 @@
 				<p>
 					<b>Modifications</b>: scrubber and
 					burners for liquid sulfur.<br/>
-					<b>Challenges</b>: Energy and chemistry now linked dur to sulfur burning!
+					<b>Challenges</b>: Energy and chemistry now linked due to sulfur burning!
 				</p>
 			</section>
 		</section>
@@ -235,14 +240,13 @@
 			<div style="display:flex;align-items:center;">
 			    <div style="flex: 0 0 60%">
 				<ul>
-				    <li>
-					Box and tubular furnace
-					experiments demonstrated
+				    <li>Formulations team noticed
+					lab furnace experiments demonstrated
 					irregular results.</li>
 				    <li class="fragment">
 					<b>Example:</b> Ternesite ($\text{C}_5\text{S}_2\bar{\text{S}}$) would only form in box
 					furnaces using sacrificial $\text{C}\bar{\text{S}}$
-					(see right), not in the tubular furnace using 50:50 bottled <b>dry</b> air and bottle $\text{SO}_2,$
+					(see right), not in the tubular furnace using 50:50 <b>dry</b> air and $\text{SO}_2,$
 					or under pure $\text{SO}_2$
 					atmospheres.</li>
 				    <li class="fragment">
@@ -268,7 +272,7 @@
 		    </section>
 		    <section>
 			<figure>
-				<h3>Thermodynamics says ternesite has a “goldilocks” zone</h3>
+				<h3>Our thermodynamics says ternesite has a “goldilocks” zone</h3>
 			    <img src="img/Ternesite.svg" style="width:65%" >
 			    <figcaption>
 				<small>Ternesite stability as a function of atmospheric
@@ -290,8 +294,7 @@
 			    </li>
 			    <li class="fragment">
 				Targeted firings in the “goldilocks” zone formed
-				ternesite at high purity in a single stage (allowing
-				further $C_p$ analysis via DSC).</li>
+				ternesite at high purity in a single stage.</li>
 			    <li class="fragment">
 				Simple mass-balance/Bogue-style equations are dangerous to
 				use for $\text{C}\bar{\text{S}}\text{A}$, as the
@@ -302,8 +305,8 @@
 				in $\text{C}\bar{\text{S}}\text{A}$
 				synthesis.
 			    </li>
-				<li>
-					We must use thermodynamics to model new formulations
+				<li class="fragment"> 
+					We must use thermodynamics to model new formulations.
 				</li>
 			</ul>
 		    </section>
@@ -414,19 +417,20 @@
 			    </div>
 			</div>
 		    </section>
-		    <section>
-			<figure>
+		</section>
+		<section style="height:100%; width:100%">
+			<section style="height:100%; width:100%">
+				<figure style="display:flex; flex-flow:column; height:100%; margin:0; padding:0;">
+					<div id="3f781c7e-3d27-4453-b2ac-24c1ddfedcec" class="plotly-graph-div" style="flex:1; width:100%;"></div>
+					<script type="text/javascript"> window.PLOTLYENV=window.PLOTLYENV || {}; if (document.getElementById("3f781c7e-3d27-4453-b2ac-24c1ddfedcec")) {Plotly.newPlot("3f781c7e-3d27-4453-b2ac-24c1ddfedcec",                        [{"line":{"color":"darkblue","width":3},"mode":"lines","name":"Solid","x":[0.00010806517236636386,0.00021613034473272772,0.00043226068946545544,0.0008645213789309109,0.0017290427578618218,0.0034580855157236435,0.006916171031447287,0.013832342062894574,0.02766468412578915,0.04149702618868372,0.06916171031447287,0.0940599260276831,0.11895814174089334,0.14385635745410358,0.16875457316731382,0.19,0.21855100459373428,0.2633677928775127,0.30818458116129116,0.3530013694450696,0.39781815772884804,0.4426349460126265,0.4874517342964049,0.5322685225801833,0.5770853108639618,0.6219020991477402,0.6667188874315186,0.7115356757152971,0.7563524639990755,0.801169252282854,0.8459860405666324,0.8908028288504108,0.9356196171341893,0.9804364054179677,1.0207715148733683,1.0611066243287688,1.1417768432395698,1.222447062150371,1.303117281061172,1.4644577188827743,1.6257981567043767,1.69,1.787138594525979,1.9484790323475814,2.1098194701691835,2.2711599079907856,2.5938407836339903,2.916521659277195,3.32,3.5618834105636044,4.207245161850014,4.852606913136423,5.0,5.246040530389145,5.322041647498991,5.474043881718684,5.626046115938377,5.77804835015807,5.988940062334179,6.06,6.199831774510288,6.410723486686398,6.51,6.621615198862507,6.8325069110386165,7.0,7.254290335390836,7.270145994384733,7.301857312372527,7.326643313798871,7.347180367696956,7.367717421595041,7.4],"y":[396.76698639636027,396.8435508135427,396.9966007435137,397.3023042925122,397.912207010849,399.12583349424017,401.52864489703916,406.23828747003165,415.28861685926074,423.86578244294685,439.73137164738,452.6352367479701,464.37465097760287,475.0585594696372,484.7910827197651,492.40389573816435,501.723215653309,514.5538817398317,525.550714275872,535.0461915622678,543.3026382248854,550.5383591721442,556.9392985926462,562.6598852009287,567.823303497514,572.5354410239937,576.8848422071139,580.9417751401301,584.7616918671382,588.399714809611,591.8832753119093,595.2443167692734,598.5110452950772,601.68372133294,604.503855496577,607.2961974514966,612.8227892959188,618.3247660952994,623.8287515377992,634.8997710945366,646.1154872718424,650.6406317415772,657.5544722795545,669.2694816040041,681.2886523181047,693.6347103192763,719.3674822507345,746.5877098745591,782.9039651136508,805.9824743988589,872.9362051421111,948.8140614246428,967.5493696110435,1000.0804769026275,1010.3523093877192,1031.014801982652,1051.9970475448895,1073.4740211917356,1104.2902551124107,1114.9613614632894,1136.4131898406608,1169.8962029130475,1186.1458570047575,1204.7982984133532,1241.1912986286397,1271.218427173038,1318.8179785410152,1321.872390664496,1328.021912012317,1333.3443347530306,1337.7045688285107,1342.0238476948903,1348.7430371191954],"type":"scatter"},{"line":{"color":"royalblue","dash":"dash","width":3},"mode":"lines","name":"Inner wall","x":[0.00010806517236636386,0.00021613034473272772,0.00043226068946545544,0.0008645213789309109,0.0017290427578618218,0.0034580855157236435,0.006916171031447287,0.013832342062894574,0.02766468412578915,0.04149702618868372,0.06916171031447287,0.0940599260276831,0.11895814174089334,0.14385635745410358,0.16875457316731382,0.19,0.21855100459373428,0.2633677928775127,0.30818458116129116,0.3530013694450696,0.39781815772884804,0.4426349460126265,0.4874517342964049,0.5322685225801833,0.5770853108639618,0.6219020991477402,0.6667188874315186,0.7115356757152971,0.7563524639990755,0.801169252282854,0.8459860405666324,0.8908028288504108,0.9356196171341893,0.9804364054179677,1.0207715148733683,1.0611066243287688,1.1417768432395698,1.222447062150371,1.303117281061172,1.4644577188827743,1.6257981567043767,1.69,1.787138594525979,1.9484790323475814,2.1098194701691835,2.2711599079907856,2.5938407836339903,2.916521659277195,3.32,3.5618834105636044,4.207245161850014,4.852606913136423,5.0,5.246040530389145,5.322041647498991,5.474043881718684,5.626046115938377,5.77804835015807,5.988940062334179,6.06,6.199831774510288,6.410723486686398,6.51,6.621615198862507,6.8325069110386165,7.0,7.254290335390836,7.270145994384733,7.301857312372527,7.326643313798871,7.347180367696956,7.367717421595041,7.4],"y":[424.3147357961026,424.35572291805977,424.43765748455826,424.6013539868012,424.9280440133374,425.57855961590064,426.8682527360063,429.4030438138699,434.30069326919113,438.97660217405223,447.72102500888934,454.93594214825225,461.59036501211926,467.73255303629685,473.4090460819972,477.91170593135064,483.509531362609,491.3967749419346,498.3624656734513,504.5583985945217,510.13095764397417,515.1572489622488,519.7736675190998,524.01461549688,528.008561864065,531.7728138701663,535.3294106250825,538.7571333299416,542.0470502633196,545.2445994100515,548.3907038610598,551.4436707396403,554.5374061656759,557.5024595561802,560.1927471938549,562.8766955587216,568.2442233179288,573.632376152914,579.0561090762924,590.0246089837243,601.2058449236744,605.7299221315718,612.6558430143932,624.4105179585973,636.4914429775982,648.916286396759,674.8573509784354,702.3529013420332,739.1172591641733,762.5244172229906,830.5812281999755,907.9224473198402,927.0409050089007,960.2511761587249,970.5615304208283,991.4362189533368,1012.745548274016,1034.6241201627818,1066.027658956722,1076.9005399178773,1098.7494091015387,1132.8765280843563,1149.442152704568,1168.4577836472663,1205.5521704703146,1236.1535968557014,1284.656806218134,1287.792983552829,1294.061094024055,1299.16639578576,1303.4893785281665,1307.7929448821824,1314.5251380481945],"type":"scatter"},{"line":{"color":"red","width":3},"mode":"lines","name":"Gas avg.","x":[0.00010806517236636386,0.00021613034473272772,0.00043226068946545544,0.0008645213789309109,0.0017290427578618218,0.0034580855157236435,0.006916171031447287,0.013832342062894574,0.02766468412578915,0.04149702618868372,0.06916171031447287,0.0940599260276831,0.11895814174089334,0.14385635745410358,0.16875457316731382,0.19,0.21855100459373428,0.2633677928775127,0.30818458116129116,0.3530013694450696,0.39781815772884804,0.4426349460126265,0.4874517342964049,0.5322685225801833,0.5770853108639618,0.6219020991477402,0.6667188874315186,0.7115356757152971,0.7563524639990755,0.801169252282854,0.8459860405666324,0.8908028288504108,0.9356196171341893,0.9804364054179677,1.0207715148733683,1.0611066243287688,1.1417768432395698,1.222447062150371,1.303117281061172,1.4644577188827743,1.6257981567043767,1.69,1.787138594525979,1.9484790323475814,2.1098194701691835,2.2711599079907856,2.5938407836339903,2.916521659277195,3.32,3.5618834105636044,4.207245161850014,4.852606913136423,5.0,5.246040530389145,5.322041647498991,5.474043881718684,5.626046115938377,5.77804835015807,5.988940062334179,6.06,6.199831774510288,6.410723486686398,6.51,6.621615198862507,6.8325069110386165,7.0,7.254290335390836,7.270145994384733,7.301857312372527,7.326643313798871,7.347180367696956,7.367717421595041,7.4],"y":[691.7947905092034,691.8049974677908,691.8254083546828,691.8662149082053,691.9477702261016,692.1106434363578,692.4354501216787,693.0813691158959,694.3589788662308,695.6183163951108,698.0871306600711,700.2558932365602,702.3797070971843,704.4630008155477,706.5100488185086,708.230683394658,710.5090565110098,714.0200190955114,717.4668054254659,720.8641137004497,724.223709986118,727.5554667066112,730.8678603752476,734.1680398977742,737.4618514360783,740.7543066032752,744.0496404997433,747.3512414863927,750.6617932433586,753.984012921202,757.3193077829047,760.6693463519383,764.0356619413511,767.429109703049,770.4986819492434,773.5852562769816,779.8240844823443,786.1332765175806,792.515270756366,805.4564650603339,818.6826282293858,824.0339000336163,832.2259513639618,846.1049223607039,860.3319176081155,874.9195484102041,905.2303927557135,937.1485180171766,979.5177990067717,1006.325355930379,1083.584397343864,1170.308869156694,1191.6056472493015,1228.4873135112803,1240.2231923178651,1264.1787138057439,1288.803177215092,1314.1281556290778,1350.4838288844085,1363.0656326140174,1388.33043712495,1427.7489988160405,1446.8741366475333,1468.8265777660017,1511.6565252270657,1546.990692425577,1602.9923355657625,1606.5871787394262,1613.8243616676555,1619.5060181080753,1624.23026394327,1628.973791283449,1636.4813924951827],"type":"scatter"},{"line":{"color":"teal","width":3},"mode":"lines","name":"Outer shell","x":[0.00010806517236636386,0.00021613034473272772,0.00043226068946545544,0.0008645213789309109,0.0017290427578618218,0.0034580855157236435,0.006916171031447287,0.013832342062894574,0.02766468412578915,0.04149702618868372,0.06916171031447287,0.0940599260276831,0.11895814174089334,0.14385635745410358,0.16875457316731382,0.19,0.21855100459373428,0.2633677928775127,0.30818458116129116,0.3530013694450696,0.39781815772884804,0.4426349460126265,0.4874517342964049,0.5322685225801833,0.5770853108639618,0.6219020991477402,0.6667188874315186,0.7115356757152971,0.7563524639990755,0.801169252282854,0.8459860405666324,0.8908028288504108,0.9356196171341893,0.9804364054179677,1.0207715148733683,1.0611066243287688,1.1417768432395698,1.222447062150371,1.303117281061172,1.4644577188827743,1.6257981567043767,1.69,1.787138594525979,1.9484790323475814,2.1098194701691835,2.2711599079907856,2.5938407836339903,2.916521659277195,3.32,3.5618834105636044,4.207245161850014,4.852606913136423,5.0,5.246040530389145,5.322041647498991,5.474043881718684,5.626046115938377,5.77804835015807,5.988940062334179,6.06,6.199831774510288,6.410723486686398,6.51,6.621615198862507,6.8325069110386165,7.0,7.254290335390836,7.270145994384733,7.301857312372527,7.326643313798871,7.347180367696956,7.367717421595041,7.4],"y":[246.14327591972665,246.1613196434879,246.19738466987064,246.26943918297718,246.4132002304375,246.69933188324376,247.26609731141025,248.3780568799025,250.51918016585785,252.55438042196602,256.33701547816077,259.435391845518,262.2752735099672,264.88153703733815,267.27748746369286,269.1691770604891,271.51047037380545,274.7897455834701,277.6656399013308,280.21102026770734,282.4873918602351,284.53266553046194,286.4022613349148,288.1115936440066,289.7183856312628,291.23186441541657,292.6480808325522,294.0242124519947,295.32767488509467,296.5876232174072,297.8382340656941,299.02563651888556,300.2731183536497,301.4145632922491,302.46688941467926,303.51458684619956,305.6025045788492,307.6893073137087,309.780669282996,313.98179336110445,318.22684549190444,319.93338522844033,322.5341530180608,326.91595902438235,331.37712618714215,335.9222384679349,345.2737886620491,354.98917725385456,367.6775164517841,375.58592248704133,397.86819795789347,422.01376801992285,427.8026435488498,437.70089591636076,440.73494103349117,446.8220899138672,452.9611540801751,459.1873974078201,467.9933476497275,471.0072431342991,477.0108901805381,486.250382517773,490.6766035414694,495.71157912312106,505.39813696163674,513.2574964822055,525.481053413941,526.2639838445336,527.8215909037211,529.0869447800984,530.1561273939511,531.2185418504909,532.8756617252031],"type":"scatter"},{"marker":{"color":"red","line":{"width":2},"size":15,"symbol":"x-open-dot"},"mode":"markers","name":"Exit gas","x":[0.0],"y":[642.0],"type":"scatter"},{"marker":{"color":"darkred","line":{"width":2},"size":15,"symbol":"x-open-dot"},"mode":"markers","name":"Thermocouples","x":[0.19,1.69,3.32,6.06,6.51],"y":[532.0,730.0,829.0000000000001,1238.0,1250.0],"type":"scatter"},{"marker":{"color":"darkblue","line":{"width":2},"size":15,"symbol":"x-open-dot"},"mode":"markers","name":"Optical pyrometry","x":[7.0],"y":[1259.0],"type":"scatter"},{"marker":{"color":"royalblue","line":{"width":2},"size":15,"symbol":"x-open-dot"},"mode":"markers","name":"Inner wall","x":[],"y":[],"type":"scatter"},{"marker":{"color":"teal","line":{"width":2},"size":15,"symbol":"x-open-dot"},"mode":"markers","name":"Outer shell IR","x":[0.19,1.69,3.32,5.0,6.06,6.51],"y":[290.0,355.0,408.0,472.0,488.0,497.0],"type":"scatter"},{"mode":"markers","name":"Adiabatic flame","x":[7.4],"y":[1672.8806619401464],"type":"scatter"}],                        {"template":{"data":{"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"#E5ECF6","showlakes":true,"showland":true,"subunitcolor":"white"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","gridwidth":2,"linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"bgcolor":"#E5ECF6","caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","zerolinewidth":2}}},"title":{"text":"KDO Trial Test Point 21"},"xaxis":{"title":{"text":"Axial Length (m)"}},"yaxis":{"title":{"text":"Temperature (°C)"}}},                        {"responsive": true}                    )                };                            </script>
+					<figcaption >
+						Symbols are experimental data, lines are model calculations. 
+					</figcaption>
+				</figure>
+			</section>
+			</section>
+			<section>
 			    <img src="img/KDOTP21r.svg" style="width:60%">
-			    <figcaption>
-				Symbols are thermocouples (pentagons),
-				outer surface measurements (hexagons),
-				or pyrometry through the burner window
-				(diamond). The bed does not cover the
-				last two thermocouples which is why
-				they've been assigned to the gas
-				phase.
-			    </figcaption>
-			</figure>
 		    </section>
 		    <section>
 			<figure>
