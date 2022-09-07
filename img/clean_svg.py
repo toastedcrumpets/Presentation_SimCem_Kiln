@@ -9,7 +9,7 @@ parser.add_option("--n", type="int", dest="nn", default=1)
 (options, args) = parser.parse_args()
 
 if len(args) != 1:
-    print "Please pass only one file!"
+    print("Please pass only one file!")
 
 import xml.etree.ElementTree as ET
 
