@@ -20,6 +20,14 @@
 	<!--[if lt IE 9]>
 	    <script src="reveal.js/lib/js/html5shiv.js"></script>
 	<![endif]-->
+	<style>
+		.twocolumn34 {
+			display: grid;
+			grid-template-columns: 3fr 1fr;
+			grid-gap: 10px;
+			text-align: left;
+		 }
+	</style>
     </head>
     <body> 
 		<script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
@@ -188,7 +196,7 @@
 		<section>
 			<section style="font-size:65%;">
 			<h2>How to develop a new process?</h2>
-			<p>£3.3M Green Concrete Project (GCP), funded by GORD in Qatar. </p>
+			<p>2012-2016, £3.3M Green Concrete Project (GCP), funded by GORD in Qatar. </p>
 			<div style="display:flex;align-items:center;">
 			    <div style="flex: 0 0 50%; border-right:2px solid black;" class="fragment" data-fragment-index="1">
 				<p style="margin-bottom:0">Prof. Glasser et al: Chemistry team
@@ -232,21 +240,34 @@
  			</div>
 		    </section>
 			<section>
-				<div>
-				<p>But $\text{C}\bar{\text{S}}\text{A}$ isn't new!</p>
-				<ul>
-					<li>Developed in China in 1970s, known as 'third series cement of china'</li>
-					<li>High early strength and rapid setting (30% higher than OPC).</li>
-					<li class="fragment">Project AETHER (3yr, €5.9M)</li>
-				</ul>
-			</div>
+				<div class="twocolumn34">
+					<div>
+						<p>But $\text{C}\bar{\text{S}}\text{A}$ isn't new!</p>
+						<ul>
+							<li>Developed in China in 1970s, known as 'third series cement of china'.</li>
+							<li>High early strength and rapid setting (30% higher than OPC).</li>
+							<li class="fragment" data-fragment-index="1">Project AETHER (2013, 3yr, €5.9M) explored EU production.
+								<ul>
+									<li>25-30% less $\text{C}\text{O}_2$.</li>
+									<li>But had production issues and didn't use
+									sulfur combustion!</b></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="fragment" data-fragment-index="1">
+						<img src="img/Aether.png">
+						<img src="img/Lafarge.png">
+						<img src="img/ICMB.png">
+					</div>
+				</div>
 			</section>
 			<section>
 				<h3>New(?) process design</h3>
 				<img src="img/process_diagram.svg" style="width:60%; background-color:white; border-radius:1em;padding:0.5em;">
 				<p>
-					<b>Modifications</b>: scrubber and
-					burners for liquid sulfur.<br/>
+					<b>Modifications</b>: Scrubber and
+					burners (not unusual).<br/>
 					<b>Challenges</b>: Energy and chemistry now linked due to sulfur burning!
 				</p>
 			</section>
@@ -267,7 +288,7 @@
 					or under pure $\text{SO}_2$
 					atmospheres.</li>
 				    <li class="fragment">
-					Literature says Ternesite stabilized by 
+					Literature says ternesite stabilized by 
 					atmospheric moisture?<br/>
 					<div style="font-size:50%">
 					    Y. B. Pliego-Cuervo and F. P. Glasser. “Role of sulphates in cement clinkering: the
@@ -323,7 +344,7 @@
 				synthesis.
 			    </li>
 				<li class="fragment"> 
-					We must use thermodynamics to model new formulations.
+					We must use thermodynamics to model new formulations, then we can fix production issues using controlled sulfur burning!
 				</li>
 			</ul>
 		    </section>
@@ -338,10 +359,29 @@
 						Accurate capture of C-A-S-F-M system with melt phases.
 					</li>
 					<li>
-						A foundational thermodynamic model for full OPC kiln modelling next year.
+						A foundational thermodynamic model for full OPC kiln modelling next year (including updates to GEMs).
 					</li>
 				</ul>
 			</section>
+		</section>
+		<section>
+
+		    <section>	    
+				<div style="display:flex;align-items:center;">
+					<div style="flex: 0 0 60%; border-right:2px solid black;">
+					<ul>
+						<li> We have been performing pilot-scale production tests since 2015.</li>
+						<li class="fragment"></li>
+					</ul>
+					</div>
+					<div style="flex:1;">
+					<video loop autoplay controls muted>
+						<source src="img/kiln.mp4" type="video/mp4"/>
+					</video>
+					</div>
+				</div>
+				</section>
+	
 		</section>
 		<section>
 		    <section>	    
