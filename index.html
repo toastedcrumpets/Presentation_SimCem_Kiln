@@ -25,11 +25,11 @@
 		<script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
         <script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
 	<div class="reveal">
-	    <div class="slides" >
+	    <div class="slides" style="border:1px solid black">
 		<section style="height:100%;width:100%;">
 		    <section data-background-image="img/UoAbackground.jpg" style="position:relative; height:100%; width:100%;">
 				<div class="backbox" >
-			    <h2 style="color:white">The state of one-dimensional kiln models</h2>
+			    <h2 style="color:white">Development of $\text{C}\bar{\text{S}}\text{A}$ cement- From Laboratory to Field Application</h2>
 				</div>
 				<p style="color:white">
 			    <em>
@@ -42,16 +42,17 @@
 				<div style="position:absolute; bottom:0; left:0; width:10em;margin-left:1em;">  
 			    <object type="image/svg+xml" data="img/UoALarge_reversed.svg" width="100%" height="100%">
 				Your browser does not support SVG
-			    </object>
+			    </object> 
 				</div>
 			</section>
 		</section>
 		<section>
 			<h2>Contents</h2>
 			<ul>
-				<li>Motivation for CSA cements.</li>
+				<li>Motivation for $\text{C}\bar{\text{S}}\text{A}$ cements.</li>
 				<li>Importance and value of thermodynamic models and kiln atmospheres.</li>
-				<li>The lack of real kiln data.</li>
+				<li>Our/GORD's new process</li>
+				<li>Performance</li>
 			</ul>
 		</section>
 		<section style="height:100%;width:100%;">
@@ -68,14 +69,15 @@
 					We've being creating a lot of new world recently; 7% of
 					manmade $\text{CO}_2$ emissions are from cement
 					production.<br/>
-					<p style="text-align:center" class="fragment"><b>Urgent pressure for the cement industry to go-green.</b></p>
+					<p style="text-align:center" class="fragment"><b>The cement industry must transition to greener processes.</b></p>
 				</li>
 				<li style="clear:both" class="fragment">
 					In 2016 and 2017, china's total cement sales equaled the USA
 					over the entire last century (1900-2000).
 					<br/>
-					<p style="text-align:center" class="fragment"><b>The scale is so large, any
-					single solution may fail just on raw material availability. We need many solutions!</b></p>
+					<p style="text-align:center" class="fragment"><b>The scale
+					is so large, any single solution may fail just on raw
+					material availability. We need many solutions! $\text{C}\bar{\text{S}}\text{A}$ is one of them.</b></p>
 				</li>
 				</ul>
 		    </section>
@@ -83,7 +85,7 @@
 				<ul>
 				<li>
 					<em>4.1B tons of cement produced in 2017 $\approx 0.5$ tons
-					per person. The second most ubiquitous product after water. </em>
+					per person. The second most ubiquitous product after <b>water</b>. </em>
 				</li>
 				<li class="fragment">
 						OPC Cement ($\approx 50\to100$ £/ton), is cheaper than
@@ -93,37 +95,41 @@
 						<br/> 
 						No margin for more expensive raw materials, and unfortunately sand and limestone is very cheap.</b>
 					</p>
+					<p style="text-align:center" class="fragment"><b>
+						Alternative processes must use these raw materials or equally cheap ones.
+					</b></p>
 					</li>
 				</ul>
 		    </section>
 			<section>
-				<h2>Alternative Formulations</h2>
+				<h2>Alternative Clinker Formulations</h2>
 			<ul>
 			    <li>
-				Roughly 75% by weight of typical OPC cement clinker is made up of belite and alite:
+				Roughly 75% by weight of typical OPC cement clinker is made up of belite and alite. On a molar basis, that's approximately the following chemistry:
 				<!-- C2S 0.1722392 kg/mol (19%)  C3S 0.2283 kg/mol (55%) -->
 				\begin{align}
 					{\color{orangered}8\,\underset{\text{limestone}}{\text{Ca}\text{C}\text{O}_3}}+3\,\underset{\text{quartz}}{\text{Si}\text{O}_2}+\ldots
 					\underset{\color{darkred}\mathbf{1450^\circ\text{C}}}{\rightleftarrows}
 					\underset{\text{belite}}{\text{Ca}_2\,\text{Si}\text{O}_4} +
-					2\,\underset{\text{alite}}{\text{Ca}_3\text{Si}\text{O}_5} + \mathbf{\color{darkred}8\,\text{C}\text{O}_2}
+					2\,\underset{\text{alite}}{\text{Ca}_3\text{Si}\text{O}_5} + \mathbf{\color{orangered}8\,\text{C}\text{O}_2}
 					\ldots \end{align}
 			    </li>
 			    <li class="fragment">
 				We need alternative clinker chemistry to reduce limestone usage,
 				as this is the source of the chemistry-derived
-				$\text{C}\text{O}_2$.
+				$\color{orangered}{\text{C}\text{O}_2}$.
 				</li>
 				<li class="fragment">
 				We need alternative fuels and lower-temperature reactions to
-				mitigate fuel-derived $\text{C}\text{O}_2$ emissions.
+				mitigate fuel-derived $\color{darkred}{\text{C}\text{O}_2}$ emissions.
 			    </li>
 				</ul>
 			</section>
 		</section>
 		<section>
 			<section>
-					<h2>$\text{C}\bar{\text{S}}\text{A}$ cement</h2>
+			    <h2>$\text{C}\bar{\text{S}}\text{A}$ cement</h2>
+				<p>
 				One solution, suggested by Prof. Glasser, is to burn sulfur to generate Calcium
 				SulfoAluminate ($\text{C}\bar{\text{S}}\text{A}$) cements, swapping alite for ye'elimite:
 
@@ -133,24 +139,23 @@
 				\underset{\text{limestone}}{\color{orangered}6\,\text{Ca}\text{C}\text{O}_3}
 				+\underset{\text{quartz}}{\text{Si}\text{O}_2}+3\,\underset{\text{bauxite}}{\text{Al}_2\text{O}_3}+\ldots
 				\\
-				\underset{\mathbf{1250^\circ\text{C}}}{\rightleftarrows}
+				\underset{\color{darkred}{\mathbf{1250^\circ\text{C}}}}{\rightleftarrows}
 				\underset{\text{belite}}{\text{Ca}_2\,\text{Si}\text{O}_4} +
 				\underset{\text{ye'elimite}}{\text{Ca}_4\text{Al}_6\text{S}\text{O}_{10}} +
-				\mathbf{\color{darkred}6\,\text{C}\text{O}_2} \ldots
+				\mathbf{\color{orangered}6\,\text{C}\text{O}_2} \ldots
 				\end{multline}
-
+				<small>
+				    <sup><small>1</small></sup>These two previous equations are
+				    roughly equivalent assuming 70%w/w
+				    C<sub>4</sub>A<sub>3</sub>S, 20%w/w C<sub>2</sub>S clinker
+				    is mass equivalent to OPC clinker. Very rough
+				    assumption but probably true as this is a high ye'elimite fraction.</small>
+				</p>
+				<p class="fragment">
 				Lower temperatures (vs $1450^\circ$), less $\text{C}\text{O}_2$ per kg clinker<small><sup>1</sup></small> due
 				to lower lime factor, and able to burn
 				sulfur for process heat!
-				<small>
-				    <sup><small>1</small></sup>Assuming
-				    70%w/w C<sub>4</sub>A<sub>3</sub>S, 20%w/w C<sub>2</sub>S clinker is
-				    mass equivalent to OPC clinker. Very rough assumption.</small>
-				<br/>
-				<span class="fragment">
-					But, bauxite is relatively expensive due to competition with aluminium
-					production $\to$ We explore using abundant lower grade aluminous clays. 
-				</span>
+				</p>
 			</section>
 			<section style="margin:0;height:100%;width:100%;padding:0;position:relative">
 			<img src="img/sulfurmountain.svg" style="height:100%; border:0;">
@@ -167,8 +172,10 @@
 			</div>
 		    </section>
 		    <section style="margin:0;height:100%;width:100%;padding:0;">
-				<img src="img/JL-economics.svg" style="width:70%; background-color:white; border-radius:1em;padding:0.5em;">
-				<div style="position:absolute; display:inline-block; width:75%; text-align:center; right:0; bottom:0; background-color:#000000aa; color:white;border-radius: 15px 0 0 0; padding:5px; font-size:85%;">
+				<img class="r-stretch" src="img/JL-economics.svg" style="background-color:white;">
+				<div style="display:inline-block; width:100%; text-align:center; background-color:#000000aa; color:white;border-radius: 15px 0 0 0; padding:5px; font-size:85%;">
+				Bauxite is relatively expensive due to competition with aluminium
+						production. However, we explore using abundant lower grade aluminous clays. <br/>
 					Even production in Qatar is competitive, despite bauxite costs. 
 					<small>
 					J. L.-Galvez-Martos et al. “Techno-economic assessment of calcium sulfoaluminate clinker
@@ -224,6 +231,16 @@
 			    </div>-->
  			</div>
 		    </section>
+			<section>
+				<div>
+				<p>But $\text{C}\bar{\text{S}}\text{A}$ isn't new!</p>
+				<ul>
+					<li>Developed in China in 1970s, known as 'third series cement of china'</li>
+					<li>High early strength and rapid setting (30% higher than OPC).</li>
+					<li class="fragment">Project AETHER (3yr, €5.9M)</li>
+				</ul>
+			</div>
+			</section>
 			<section>
 				<h3>New(?) process design</h3>
 				<img src="img/process_diagram.svg" style="width:60%; background-color:white; border-radius:1em;padding:0.5em;">
@@ -469,7 +486,7 @@
 		    </section>
 		</section>
 		<section id="Conclusions">
-		    <h2>CSA Conclusions</h2>
+		    <h2>$\text{C}\bar{\text{S}}\text{A}$ Conclusions</h2>
 		    <ul>
 			<li>
 			    Simple equilibrium thermodynamic models
@@ -596,7 +613,7 @@
 		    <section>
 			<ul style="padding-top:2em;">
 			    <li>
-				(2013-2016) £3.3M <b>G</b>reen-<b>C</b>oncrete <b>P</b>roject <b>(GCP)</b>
+				(2012-2016) £3.3M <b>G</b>reen-<b>C</b>oncrete <b>P</b>roject <b>(GCP) (2016-</b>
 				sponsored by the Gulf Organisation for Research
 				&amp; Development, Qatar. PIs: F. P. Glasser and
 				M. S. Imbabi, (10+ PDRAs, 10+PhDs @ Aberdeen).</li>
