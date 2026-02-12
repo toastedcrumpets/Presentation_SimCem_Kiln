@@ -1,21 +1,27 @@
 <!doctype html>
 <html lang="en">
-    <head> 
+
+<head>
 	<meta charset="utf-8">
 	<title>SimCem</title>
-	<meta name="description" content="A presentation by Marcus Bannerman.">
-	<meta name="author" content="Marcus Bannerman <m.campbellbannerman@abdn.ac.uk">
+	<meta name="description" content="A presentation by Marcus Bannerman on cement production simulation.">
+	<meta name="author" content="Marcus Bannerman <m.campbellbannerman@abdn.ac.uk>">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" 
-	      content="black-translucent" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-	<link rel="stylesheet" href="reveal.js/dist/reveal.css"></link>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+	</link>
 	<!-- Default themes -->
-	<link rel="stylesheet" href="reveal.js/dist/theme/beige.css" id="theme"></link>
-	<link rel="stylesheet" href="UoA.css"></link>
+	<link rel="stylesheet" href="reveal.js/dist/theme/black.css" id="theme">
+	</link>
+	<link rel="stylesheet" href="UoA.css">
+	</link>
 	<!-- For syntax highlighting -->
-	<link rel="stylesheet" href="reveal.js/plugin/highlight/zenburn.css"></link>
-	<link rel="stylesheet" href="Font-Awesome/css/font-awesome.min.css"></link>
+	<link rel="stylesheet" href="reveal.js/plugin/highlight/zenburn.css">
+	</link>
+	<link rel="stylesheet" href="Font-Awesome/css/font-awesome.min.css">
+	</link>
 	<!-- For LaTeX formating highlighting -->
 	<!--[if lt IE 9]>
 	    <script src="reveal.js/lib/js/html5shiv.js"></script>
@@ -26,100 +32,130 @@
 			grid-template-columns: 3fr 1fr;
 			grid-gap: 10px;
 			text-align: left;
-		 }
+		}
 	</style>
-    </head>
-    <body> 
-		<script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
+</head>
+
+<body>
+	<script type="text/javascript">window.PlotlyConfig = { MathJaxConfig: 'local' };</script>
+	<script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
 	<div class="reveal">
-	    <div class="slides">
-		<section style="height:100%;width:100%;">
-		    <section data-background-image="img/UoAbackground.jpg" style="position:relative; height:100%; width:100%;">
-				<div class="backbox" >
-			    <h2 style="color:white">Development of $\text{C}\bar{\text{S}}\text{A}$ cement:<br/> From Laboratory to Field Application</h2>
-				</div>
-				<p style="color:white">
-			    <em>
-			    September 2022<br/><br/>
-			    Marcus N. Campbell Bannerman<br/>
-			    <a style="color:darkseagreen" href="mailto:m.campbellbannerman@abdn.ac.uk">m.campbellbannerman@abdn.ac.uk</a></em><br/> <br/> 
-				<!--<a style="color:aqua" href="http://www.marcusbannerman.co.uk/Presentation_SimCem_Kiln/">http://www.marcusbannerman.co.uk/Presentation_SimCem_Kiln/</a>-->
-				</p>
-  
-				<div style="position:absolute; bottom:0; left:0; width:10em;margin-left:1em;">  
-			    <object type="image/svg+xml" data="img/UoALarge_reversed.svg" width="100%" height="100%">
-				Your browser does not support SVG
-			    </object> 
-				</div>
+		<div class="slides" style="border:1px solid red;">
+			<section style="height:100%;width:100%;">
+				<section data-background-image="img/UoAbackground.jpg"
+					style="position:relative; height:100%; width:100%;">
+					<div class="backbox">
+						<h3 style="color:white;">Detailed Process Models for Agile/Green Cement Plants</h3>
+						<h3 style="color:white;font-weight: lighter;">Lessons Learnt Developing a Low-Carbon CSA Cement
+							Pilot Scale Process</h4>
+					</div>
+					<p style="color:white">
+						<em>
+							Advanced Materials for Sustainable Infrastructure Development
+							<br />Gordon Research Conference, Feb 2026 <br /><br />
+							Marcus N. Campbell Bannerman<br />
+							<a style="color:darkseagreen"
+								href="mailto:m.campbellbannerman@abdn.ac.uk">m.campbellbannerman@abdn.ac.uk</a></em><br />
+						<br />
+						<!--<a style="color:aqua" href="http://www.marcusbannerman.co.uk/Presentation_SimCem_Kiln/">http://www.marcusbannerman.co.uk/Presentation_SimCem_Kiln/</a>-->
+					</p>
+
+					<div style="position:absolute; bottom:0; left:0; width:10em;margin-left:1em;">
+						<object type="image/svg+xml" data="img/UoALarge_reversed.svg" width="100%" height="100%">
+							Your browser does not support SVG
+						</object>
+					</div>
+				</section>
 			</section>
-		</section>
-		<section>
-			<h2>Contents</h2>
-			<ul>
-				<li>Motivation for $\text{C}\bar{\text{S}}\text{A}$ cements.</li>
-				<li>Importance of kiln atmospheres.</li>
-				<li>Performance</li>
-			</ul>
-		</section>
+			<section>
+				<section>
+					<div style="display:flex;">
+						<div style="flex:1;">
+							<img src="img/boat_at_port_erin.jpg" width="2060" height="2008" style="width:100%">
+						</div>
+						<p style="flex:1; margin:1em; margin-top:3em;">
+							My childhood was spent <br/>holidaying-on,<br/>maintaining,<br/> and scraping barnacles off,<br/> a cement boat built by my dad.
+						</p>
+					</div>
+				</section>
+				<section>
+					<img src="img/construction.png" width="1123" height="557" style="width:80%">
+					<p>
+						Ferrocement hulls are labour intensive, but strong... 
+					</p>
+				</section>
+				<section>
+					<div style="display:flex">
+						<div style="flex:0.8;">
+							<img src="img/boat_damage_recreation.jpg" width="488" height="682" style="width:100%">
+						</div>
+						<div style="flex:1; margin:1em;">
+						 <ul>
+							<li>A dock worker drove a van onto the bow one night when the tide was out. </li>
+							<li>Workers craned the van off immediately to save/lift the boat (hence the photoshopped van).</li>
+							<li>Only the railing and paint was damaged, still sailing today!</li>
+						 </ul>
+							<p><b>Cement is an amazing material we need in many applications.</b></p>
+						</div>
+					</div>
+				</section>
+			</section>
 		<section style="height:100%;width:100%;">
 		    <section data-transition="slide-in none-out">
 				<p>
 			    <i>Scientists discover the world that exists; engineers create
-			    the world that never was.</i> <br/>
+			    the world that never was.</i>
+				</p>
 				<span style="float:right">
 					T. von Kármán
 				</span>
-				</p>
 				<ul>
 				<li class="fragment">
-					We've being creating a lot of new world recently; 7% of
+					We've being creating a lot of new world recently; <br/>$\approx7\%$ of
 					manmade $\text{CO}_2$ emissions are from cement
 					production.<br/>
-					<p style="text-align:center" class="fragment"><b>The cement industry must transition to greener processes.</b></p>
-				</li>
-				<li style="clear:both" class="fragment">
-					In 2016 and 2017, china's total cement sales equaled the USA
-					over the entire last century (1900-2000).
-					<br/>
-					<p style="text-align:center" class="fragment"><b>The scale
-					is so large, any single solution may fail just on raw
-					material availability. We need many solutions! $\text{C}\bar{\text{S}}\text{A}$ is one of them.</b></p>
-				</li>
+					<p style="text-align:center" class="fragment"><b>Cement (and cement production) must change.</b></p>
+				</li> 
 				</ul>
 		    </section>
 		    <section data-transition="none-in slide-out" >
 				<ul>
 				<li>
-					<em>4.1B tons of cement produced in 2017 $\approx 0.5$ tons
+					<em>4B tons of cement produced in 2023 $\approx 0.5$ tons
 					per person. The second most ubiquitous product after <b>water</b>. </em>
 				</li>
 				<li class="fragment">
-						OPC Cement ($\approx 50\to100$ £/ton), is cheaper than
-						deionised water <span style="white-space:nowrap">($\approx200$ £/ton)</span>, but more expensive
-						than tap water ($\approx1$ £/ton).
-					<p style="text-align:center" class="fragment"><b>No margin for any expensive process (or process upgrades). 
-						<br/> 
-						No margin for more expensive raw materials, and unfortunately sand and limestone is very cheap.</b>
-					</p>
-					<p style="text-align:center" class="fragment"><b>
-						Alternative processes must use these raw materials or equally cheap ones.
-					</b></p>
-					</li>
+					Like water, there is very little margin for more expensive raw materials:
+					<ul>
+						<li>Deionised water <span style="white-space:nowrap">($\approx200$ £/ton)</span></li>
+						<li>OPC Cement ($\approx100$ £/ton)</li>
+						<li>Tap water ($\approx1$ £/ton)</li>
+					</ul>
+				</li>
 				</ul>
+				<p class="fragment">
+					<b>
+						Alternative cements must be equally cheap, lower carbon, and able to scale!
+					</b>
+				<p>
 		    </section>
+			<section data-background-image="img/clinker_mountain_qatar_Jan2025.jpg" data-background-size="cover" data-background-size="contain"> 
+				<p>I climbed this mountain of clinker in Qatar in January 2025.</p>
+			</section>
 			<section>
 				<h2>Alternative Clinker Formulations</h2>
 			<ul>
 			    <li>
 				Roughly 75% by weight of typical OPC cement clinker is made up of belite and alite. On a molar basis, that's approximately the following chemistry:
 				<!-- C2S 0.1722392 kg/mol (19%)  C3S 0.2283 kg/mol (55%) -->
+				<span style="font-size:0.9em">
 				\begin{align}
 					{\color{orangered}8\,\underset{\text{limestone}}{\text{Ca}\text{C}\text{O}_3}}+3\,\underset{\text{quartz}}{\text{Si}\text{O}_2}+\ldots
 					\underset{\color{darkred}\mathbf{1450^\circ\text{C}}}{\rightleftarrows}
 					\underset{\text{belite}}{\text{Ca}_2\,\text{Si}\text{O}_4} +
 					2\,\underset{\text{alite}}{\text{Ca}_3\text{Si}\text{O}_5} + \mathbf{\color{orangered}8\,\text{C}\text{O}_2}
 					\ldots \end{align}
+				</span>					
 			    </li>
 			    <li class="fragment">
 				We need alternative clinker chemistry to reduce limestone usage,
@@ -155,8 +191,7 @@
 				    <sup><small>1</small></sup>These two previous equations are
 				    roughly equivalent assuming 70%w/w
 				    C<sub>4</sub>A<sub>3</sub>S, 20%w/w C<sub>2</sub>S clinker
-				    is mass equivalent to OPC clinker. Very rough
-				    assumption but probably true as this is a high ye'elimite fraction.</small>
+				    is mass equivalent to OPC clinker, which is a high ye'elimite fraction.</small>
 				</p>
 				<p class="fragment">
 				Lower temperatures (vs $1450^\circ$C), less $\text{C}\text{O}_2$ per kg clinker<small><sup>1</sup></small> due
