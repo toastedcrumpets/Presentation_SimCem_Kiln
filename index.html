@@ -40,7 +40,7 @@
 	<script type="text/javascript">window.PlotlyConfig = { MathJaxConfig: 'local' };</script>
 	<script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
 	<div class="reveal">
-		<div class="slides" style="border:1px solid red;">
+		<div class="slides" style="border:1px solid black;">
 			<section style="height:100%;width:100%;"><!-- Title slide -->
 				<section data-background-image="img/UoAbackground.jpg"
 					style="position:relative; height:100%; width:100%;">
@@ -49,7 +49,7 @@
 						<h3 style="color:white;font-weight: lighter;">Lessons Learnt Developing a Low-Carbon CSA Cement
 							Pilot Scale Process</h4>
 					</div>
-					<p style="color:white">
+					<p style="color:white; display:inline-block; padding:1em" class="backbox">
 						<em>
 							Advanced Materials for Sustainable Infrastructure Development
 							<br />Gordon Research Conference, Feb 2026 <br /><br />
@@ -60,7 +60,7 @@
 						<!--<a style="color:aqua" href="http://www.marcusbannerman.co.uk/Presentation_SimCem_Kiln/">http://www.marcusbannerman.co.uk/Presentation_SimCem_Kiln/</a>-->
 					</p>
 
-					<div style="position:absolute; bottom:0; left:0; width:10em;margin-left:1em;">
+					<div style="position:absolute; bottom:0; left:0; width:8em;">
 						<object type="image/svg+xml" data="img/UoALarge_reversed.svg" width="100%" height="100%">
 							Your browser does not support SVG
 						</object>
@@ -153,12 +153,12 @@
 				</section>
 			</section>
 			<section> <!-- The ugly -->
-				<h3 class="backbox" style="color:white;">... and The Ugly (Scale).</h3>
+				<h3 class="backbox" style="color:white;">... and The Ugly.</h3>
 				<section data-background-image="img/clinker_mountain_qatar_Jan2025.jpg" data-background-size="cover"
 					data-background-size="contain" style="height:100%">
 					<p style="position:absolute; bottom:0; left:0; right:0;" class="backbox">
 						The scale of OPC production is truly staggering: I climbed this mountain of clinker in Qatar in
-						January 2025 (approx. 1 year of production post world cup).
+						January 2025. <br/>(approx. 1 year of demand for this plant post world cup).
 					</p>
 				</section>
 				<section data-background-image="img/umm_bab_clay_quarry.webp" data-background-size="cover"
@@ -240,9 +240,9 @@
 							<ul>
 								<li> We have been performing pilot-scale production tests since 2015.</li>
 								<li class="fragment">We now have an optimised 40% ye'elemite/40% belite formulation that uses very little bauxite
-									(7%), primarily high-alumina clay. 
+									(7%), primarily high-alumina clay, and <b>KNPC sulfur</b>. 
 								<small> A. Elhoweris et al., 
-								&ldquo;Production of a belitic CSA clinker using sulfur as a fuel 
+								&ldquo;Production of a belitic CSA clinker sulfur as a fuel 
 								and as a source of clinker sulfur trioxide: Pilot-scale production 
 								optimisation and analysis&rdquo;, submitted ACR (2025)</small>
 								</li>
@@ -413,13 +413,16 @@
 							</small>
 						</li>
 						<li>
-							Our full  unpublished work (wimcem) includes a full CaO-Al<sub>2</sub>O<sub>3</sub>-SiO<sub>2</sub>, cement-relevant CaO-Al<sub>2</sub>O<sub>3</sub>-Fe-O subsection, CaO-MgO-SiO<sub>2</sub>, plus S expansions (ye'elimite, ternesite, and SO<sub>x</sub>).
+							Our full  unpublished work (wimcem) includes a full 
+							CaO-Al<sub>2</sub>O<sub>3</sub>-SiO<sub>2</sub> section,
+							cement-relevant CaO-Al<sub>2</sub>O<sub>3</sub>-Fe-O subsection,
+							a CaO-MgO-SiO<sub>2</sub> section, plus S expansions (ye'elimite, ternesite, and SO<sub>x</sub>).
 						<small>
 						<a href="http://marcusbannerman.co.uk/wahab_abdul_thesis.pdf">W. Abdul, “Thermodynamic modelling of portland cement clinker production,” School of Engineering, University of Aberdeen (2023)</a>
 						</small>
 						</li>
 						<li>
-							This year I fixed convergence issues with PyCalphad (open source solver), so now we can give free access.
+							This year I fixed convergence issues with PyCalphad (open source solver), so now we can give free access and perform automated testing.
 						</li>
 					</ul>
 				</section>
@@ -446,7 +449,7 @@
 				<section>
 					<div style="display:flex;align-items:center;">
 						<div style="flex: 0 0 60%; border-right:2px solid black;">
-							<h3>Lesson Learned: Need heat transfer models</h3>
+							<h3>The Need for Heat Transfer Models</h3>
 							<ul>
 								<li>
 									All CSA pilot trial points were designed using simcem and were mostly successful.</li>
@@ -618,18 +621,17 @@
 						<li class="fragment">Hydration testing suggests even higher M-ratios than expected are better.
 							Means more sulfur burning and even better economics.</li>
 						<li class="fragment">
-							Our optimised formulation has equal strength performance to OPC in the long term, but much
-							higher strength short term.
+							Our optimised formulation beats or equals OPC in all tests.
 						</li>
 						<li class="fragment">
-							It is more dimensionally stable than OPC, more resistant to sulfate AND chloride.
+							We have synthesised alite-ye'elimite blends with/without mineraliser but this is very tricky.
 						</li>
 					</ul>
 				</section>
 				<section>
 					<h2>Outlook</h2>
 					<p> Memorandum of Understanding signed between GORD and Qatar National Cement Company. Hopefully
-						moving towards commercial production in the near future!</p>
+						moving towards commercial production of CSA in the near future and full-scale plant data!</p>
 					<img src="img/GORD-QNCC.jpg" style="width:50%">
 				</section>
 				<section>
