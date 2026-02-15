@@ -41,7 +41,7 @@
 	<script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
 	<div class="reveal">
 		<div class="slides" style="border:1px solid red;">
-			<section style="height:100%;width:100%;">
+			<section style="height:100%;width:100%;"><!-- Title slide -->
 				<section data-background-image="img/UoAbackground.jpg"
 					style="position:relative; height:100%; width:100%;">
 					<div class="backbox">
@@ -67,7 +67,7 @@
 					</div>
 				</section>
 			</section>
-			<section>
+			<section><!-- The good -->
 				<h3>The Good,</h3>
 				<section>
 					<h3 style="visibility: hidden;">The Good,</h3>
@@ -107,7 +107,7 @@
 					</div>
 				</section>
 			</section>
-			<section style="height:100%;width:100%;">
+			<section style="height:100%;width:100%;"> <!-- The bad -->
 				<h3>The Bad,</h3>
 				<section>
 					<h3 style="visibility: hidden;">The Bad,</h3>
@@ -152,8 +152,8 @@
 					<p>
 				</section>
 			</section>
-			<section>
-				<h3 class="backbox" style="color:white;">... and The <s>Ugly</s> Scale.</h3>
+			<section> <!-- The ugly -->
+				<h3 class="backbox" style="color:white;">... and The Ugly (Scale).</h3>
 				<section data-background-image="img/clinker_mountain_qatar_Jan2025.jpg" data-background-size="cover"
 					data-background-size="contain" style="height:100%">
 					<p style="position:absolute; bottom:0; left:0; right:0;" class="backbox">
@@ -169,7 +169,7 @@
 					</p>
 				</section>
 			</section>
-			<section>
+			<section><!-- OPC versus CSA -->
 				<section>
 					<h3>Alternative Clinker Formulations</h2>
 					<ul>
@@ -229,14 +229,14 @@
 						Lower temperatures (vs $1450^\circ$C), less $\text{C}\text{O}_2$ per kg
 						clinker<small><sup>1</sup></small> due
 						to lower lime factor, and able to burn
-						sulfur for process heat!
+						sulfur for process heat! Great example for process modelling too!
 					</p>
 				</section>
 			</section>
-			<section>
+			<section><!-- About our CSA -->
 				<section>
 					<div style="display:flex;align-items:center;">
-						<div style="flex: 0 0 70%; border-right:2px solid black;">
+						<div style="flex: 0 0 63%; padding-right:1em;">
 							<ul>
 								<li> We have been performing pilot-scale production tests since 2015.</li>
 								<li class="fragment">We now have an optimised 40% ye'elemite/40% belite formulation that uses very little bauxite
@@ -265,6 +265,15 @@
 								Hydration performance grows with more anhydrite (M1.8 is 9%). 
 								PC is CEM I 42.5 N.
 							</p>
+							<p class="fragment">
+								Better early strength than CEM I 42.5, similar late strength.
+							</p>
+							<p>
+								<small> A. Elhoweris et al., 
+								&ldquo;Production of a belitic CSA clinker using sulfur as a fuel 
+								and as a source of clinker sulfur trioxide: Pilot-scale production 
+								optimisation and analysis&rdquo;, submitted ACR (2025)</small>
+							</p>
 						</div>
 						<div style="flex:0.8">
 							<img src="img/strength-2.png" style="width:100%;">
@@ -292,7 +301,6 @@
 					<img src="img/dim-stability-1.png" style="width:45%">
 					<img src="img/dim-stability-2.png" style="width:45%">
 				</section>
-
 				<section>
 					<h3>Sulfate resistance</h3>
 					<div style="display:flex;align-items:center;">
@@ -332,7 +340,7 @@
 					<div
 						style="position:absolute; display:inline-block; width:50%; text-align:center; right:0; bottom:0; background-color:#000000aa; color:white;border-radius: 15px 0 0 0; padding:5px; font-size:85%;">
 						There's plenty of &ldquo;surplus&rdquo; sulfur in the
-						world to meet even cement's demand, the problem is competition over bauxite .
+						world to meet even cement's demand, the problem is competition over bauxite.
 					</div>
 				</section>
 			</section>
@@ -360,11 +368,242 @@
 				<section>
 					<img src="img/Raw_mix_design_3_Optimised_formulation.png" style="width:100%;margin:0; padding:0;">
 					<p>
-						This is close to our formula (in the pilot paper), you need to optimise through lab synthesis and thermodynamics.
+						This is close to our formula (in the pilot paper we use gypsum and sulfur), you need to optimise through lab synthesis and thermodynamics.
 					</p>
 				</section>
 			</section>	
-			<section>
+			<section><!--- Thermodynamics design-->
+				<section>
+					<h3>The Need for Thermodynamics</h3>
+					<div style="display:flex">
+						<div style="flex:1">
+							<img src="img/Bogue_comparison.jpg" style="width:500%"/>
+						</div>
+						<div style="flex:0.9">
+					<p>
+						Our Nanocem/Innovandi CP17 project showed Bogue/Taylor works OK for OPC with some outliers as expected.
+					</p>
+					<p fragment="">
+						But it can go very wrong for atypical formulations, especially CSA.
+					</p>
+						</div>
+					</div>
+					<small>
+						<a>W. Abdul, C. Rößler, H. Kletti, C. Mawalala, A. Pisch, M. N. Bannerman, and T. Hanein, 
+							“Portland cement clinker: microstructural characterisation and the fate of chemical elements,” 
+							<em>Cement and Concrete Research</em>, <b>189</b>, 107773 (2025)</a>
+					</small>
+				</section>
+				<section>
+					<figure>
+						<img src="img/Taylor.svg" width="100%">
+						<figcaption>
+							Our past work on thermodynamics (called simcem) generally fixes the molar balance issues of Bogue, while adding gas effects (CO<sub>2</sub> and SO<sub>2</sub>) and so is equally good for OPC or CSA (or both).</figcaption>
+							<small>
+								<a href="http://dx.doi.org/10.1016/j.cemconres.2020.106043">T. Hanein, F. Glasser, and M. N. Bannerman, “Thermodynamic data for cement clinkering,” Cement Concrete Res., 132, 106043 (2020)</a> 
+							</small>
+					</figure>
+				</section>
+				<section>
+					<ul>
+						<li>
+							More recently we have developed a free, CALPHAD database that takes into account melting and substitution.
+							<small>
+								<a href="">W. Abdul, C. Mawalala, A. Pisch, and M. N. Bannerman, “CaO-SiO2 assessment using 3rd generation CALPHAD models,” Cement and Concrete Research, 173, 107309 (2023)</a>
+							</small>
+						</li>
+						<li>
+							Our full  unpublished work (wimcem) includes a full CaO-Al<sub>2</sub>O<sub>3</sub>-SiO<sub>2</sub>, cement-relevant CaO-Al<sub>2</sub>O<sub>3</sub>-Fe-O subsection, CaO-MgO-SiO<sub>2</sub>, plus S expansions (ye'elimite, ternesite, and SO<sub>x</sub>).
+						<small>
+						<a href="http://marcusbannerman.co.uk/wahab_abdul_thesis.pdf">W. Abdul, “Thermodynamic modelling of portland cement clinker production,” School of Engineering, University of Aberdeen (2023)</a>
+						</small>
+						</li>
+						<li>
+							This year I fixed convergence issues with PyCalphad (open source solver), so now we can give free access.
+						</li>
+					</ul>
+				</section>
+				<section>
+					<img src="img/Raw_mix_analysis_1.png" style="width:90%;">
+					<p>
+						At <a href="https://tool.simcem.com">tool.simcem.com</a>, first define your raw mix oxides <br/>(or import the optimised mix from the designer).
+					</p>
+				</section>
+				<section>
+					<img src="img/Raw_mix_analysis_2.png" style="width:90%;">
+					<p>
+						Select your calculators and get the results. Wimcem is CASF only and scheil cooling is disabled (very early testing).
+					</p>
+				</section>
+				<section>
+					<img src="img/Raw_mix_analysis_3.png" style="width:70%;">
+					<p style="margin:0;font-size:80%;">
+						You can even compare against literature and see the issues with Bogue/Taylor/Simcem/Wimcem.
+					</p>
+				</section>
+			</section>
+			<section id="#kilnmodel" style="height:100%;width:100%;">
+				<section>
+					<div style="display:flex;align-items:center;">
+						<div style="flex: 0 0 60%; border-right:2px solid black;">
+							<h3>Lesson Learned: Need heat transfer models</h3>
+							<ul>
+								<li>
+									All CSA pilot trial points were designed using simcem and were mostly successful.</li>
+								<li class="fragment">
+									One &ldquo;challenging&rdquo; point at a target temperature of $1300^\circ$C
+									is examined. The target was ye'elimite
+									using high alumina clay, zero bauxite.<table class="fragment"
+										style="margin:0;">
+										<thead>
+											<tr>
+												<td>Phase</td>
+												<td>$\text{C}_4\text{A}_3\bar{\text{S}}$</td>
+												<td>$\text{C}_2\text{S}$</td>
+												<td>$\text{C}_5\text{S}_2\bar{\text{S}}$</td>
+												<td>$\text{C}\bar{\text{S}}$</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Thermodynamics</td>
+												<td>33%</td>
+												<td>55%</td>
+												<td>0%</td>
+												<td>0%</td>
+											</tr>
+											<tr>
+												<td>XRD analysis</td>
+												<td>34%</td>
+												<td>44%</td>
+												<td>14%</td>
+												<td>3%</td>
+											</tr>
+										</tbody>
+									</table>
+								</li>
+								<li class="fragment">
+									Thermodynamics fails to predict the appearance of
+									ternesite. What does thermodynamics miss?</li>
+							</ul>
+						</div>
+						<div style="flex:1;">
+							<video loop autoplay controls muted>
+								<source src="img/kiln.mp4" type="video/mp4" />
+							</video>
+						</div>
+					</div>
+				</section>
+				<section>
+					<ul>
+						<li>
+							Although kinetics are a factor (more
+							so at low temperatures), our
+							experience shows understanding the <b>actual</b> rather
+							than targeted processing
+							conditions/temperature is far more
+							important.</li>
+						<!-- <li class="fragment">
+				 Also, heat transfer is controlled via
+				 fuel/air rates, which changes the
+				 atmosphere within the kiln. If the
+				 atmosphere plays a role, then heat
+				 transfer is inextricably linked with
+				 the clinker thermodynamics.</li>-->
+						<li class="fragment"> A combined
+							thermodynamics and kiln heat-transfer
+							model has been developed to target
+							these issues.</li>
+					</ul>
+				</section>
+				<section>
+					<figure>
+						<object type="image/svg+xml" data="img/kiln_balance.svg" width="100%">
+							Your browser does not support SVG
+						</object>
+						<figcaption>
+							One-dimensional heat transfer model
+							breaks the kiln into slices with
+							enthalpic homogenised temperatures for
+							the solid and gas phases. Our model
+							was optimised against a database of
+							kiln studies. See our paper for more
+							information. <small>T. Hanein, F. P. Glasser, and M. N. Bannerman, “One-dimensional
+								steady-state thermal model for rotary kilns used in the manufacture of cement,” <i>Adv.
+									Appl. Ceram.</i>, <b>116</b>(4), 207-215 (2017)</small></figcaption>
+					</figure>
+				</section>
+				<section>
+					<div style="display:flex;align-items:center;">
+						<div style="flex: 0 0 70%; border-right:2px solid black;">
+							<ul>
+								<li>
+									Our kiln model is fully
+									predictive: inlet gas
+									temperature from adiabatic
+									flame calculation, solids at
+									room temperature. No fitting.</li>
+								<li class="fragment">
+									It is difficult to get <i>direct</i> thermal
+									measurements from production kilns:
+									<ul>
+										<li class="fragment">
+											Surface temperatures and exit bed temperature are
+											measured via optical pyrometry (which was also
+											used to control the kiln temperature).
+										</li>
+										<li class="fragment">
+											Internal temperatures via thermocouple wells
+											(fixed to wall, so they rotate in and out of the
+											bed).
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div style="flex:1;">
+							<img src="img/theo_sampling.png" width="611" height="1072" style="float:right;width:100%;">
+						</div>
+					</div>
+				</section>
+				<section style="height:100%; width:100%">
+					<figure style="display:flex; flex-flow:column; height:100%; margin:0; padding:0;">
+						<div id="3f781c7e-3d27-4453-b2ac-24c1ddfedcec" class="plotly-graph-div"
+							style="flex:1; width:100%;"></div>
+						<script type="text/javascript"> 
+							window.PLOTLYENV = window.PLOTLYENV || {}; if (document.getElementById("3f781c7e-3d27-4453-b2ac-24c1ddfedcec")) { Plotly.newPlot("3f781c7e-3d27-4453-b2ac-24c1ddfedcec", [{ "line": { "color": "darkblue", "width": 3 }, "mode": "lines", "name": "Solid", "x": [0.00010806517236636386, 0.00021613034473272772, 0.00043226068946545544, 0.0008645213789309109, 0.0017290427578618218, 0.0034580855157236435, 0.006916171031447287, 0.013832342062894574, 0.02766468412578915, 0.04149702618868372, 0.06916171031447287, 0.0940599260276831, 0.11895814174089334, 0.14385635745410358, 0.16875457316731382, 0.19, 0.21855100459373428, 0.2633677928775127, 0.30818458116129116, 0.3530013694450696, 0.39781815772884804, 0.4426349460126265, 0.4874517342964049, 0.5322685225801833, 0.5770853108639618, 0.6219020991477402, 0.6667188874315186, 0.7115356757152971, 0.7563524639990755, 0.801169252282854, 0.8459860405666324, 0.8908028288504108, 0.9356196171341893, 0.9804364054179677, 1.0207715148733683, 1.0611066243287688, 1.1417768432395698, 1.222447062150371, 1.303117281061172, 1.4644577188827743, 1.6257981567043767, 1.69, 1.787138594525979, 1.9484790323475814, 2.1098194701691835, 2.2711599079907856, 2.5938407836339903, 2.916521659277195, 3.32, 3.5618834105636044, 4.207245161850014, 4.852606913136423, 5.0, 5.246040530389145, 5.322041647498991, 5.474043881718684, 5.626046115938377, 5.77804835015807, 5.988940062334179, 6.06, 6.199831774510288, 6.410723486686398, 6.51, 6.621615198862507, 6.8325069110386165, 7.0, 7.254290335390836, 7.270145994384733, 7.301857312372527, 7.326643313798871, 7.347180367696956, 7.367717421595041, 7.4], "y": [396.76698639636027, 396.8435508135427, 396.9966007435137, 397.3023042925122, 397.912207010849, 399.12583349424017, 401.52864489703916, 406.23828747003165, 415.28861685926074, 423.86578244294685, 439.73137164738, 452.6352367479701, 464.37465097760287, 475.0585594696372, 484.7910827197651, 492.40389573816435, 501.723215653309, 514.5538817398317, 525.550714275872, 535.0461915622678, 543.3026382248854, 550.5383591721442, 556.9392985926462, 562.6598852009287, 567.823303497514, 572.5354410239937, 576.8848422071139, 580.9417751401301, 584.7616918671382, 588.399714809611, 591.8832753119093, 595.2443167692734, 598.5110452950772, 601.68372133294, 604.503855496577, 607.2961974514966, 612.8227892959188, 618.3247660952994, 623.8287515377992, 634.8997710945366, 646.1154872718424, 650.6406317415772, 657.5544722795545, 669.2694816040041, 681.2886523181047, 693.6347103192763, 719.3674822507345, 746.5877098745591, 782.9039651136508, 805.9824743988589, 872.9362051421111, 948.8140614246428, 967.5493696110435, 1000.0804769026275, 1010.3523093877192, 1031.014801982652, 1051.9970475448895, 1073.4740211917356, 1104.2902551124107, 1114.9613614632894, 1136.4131898406608, 1169.8962029130475, 1186.1458570047575, 1204.7982984133532, 1241.1912986286397, 1271.218427173038, 1318.8179785410152, 1321.872390664496, 1328.021912012317, 1333.3443347530306, 1337.7045688285107, 1342.0238476948903, 1348.7430371191954], "type": "scatter" }, { "line": { "color": "royalblue", "dash": "dash", "width": 3 }, "mode": "lines", "name": "Inner wall", "x": [0.00010806517236636386, 0.00021613034473272772, 0.00043226068946545544, 0.0008645213789309109, 0.0017290427578618218, 0.0034580855157236435, 0.006916171031447287, 0.013832342062894574, 0.02766468412578915, 0.04149702618868372, 0.06916171031447287, 0.0940599260276831, 0.11895814174089334, 0.14385635745410358, 0.16875457316731382, 0.19, 0.21855100459373428, 0.2633677928775127, 0.30818458116129116, 0.3530013694450696, 0.39781815772884804, 0.4426349460126265, 0.4874517342964049, 0.5322685225801833, 0.5770853108639618, 0.6219020991477402, 0.6667188874315186, 0.7115356757152971, 0.7563524639990755, 0.801169252282854, 0.8459860405666324, 0.8908028288504108, 0.9356196171341893, 0.9804364054179677, 1.0207715148733683, 1.0611066243287688, 1.1417768432395698, 1.222447062150371, 1.303117281061172, 1.4644577188827743, 1.6257981567043767, 1.69, 1.787138594525979, 1.9484790323475814, 2.1098194701691835, 2.2711599079907856, 2.5938407836339903, 2.916521659277195, 3.32, 3.5618834105636044, 4.207245161850014, 4.852606913136423, 5.0, 5.246040530389145, 5.322041647498991, 5.474043881718684, 5.626046115938377, 5.77804835015807, 5.988940062334179, 6.06, 6.199831774510288, 6.410723486686398, 6.51, 6.621615198862507, 6.8325069110386165, 7.0, 7.254290335390836, 7.270145994384733, 7.301857312372527, 7.326643313798871, 7.347180367696956, 7.367717421595041, 7.4], "y": [424.3147357961026, 424.35572291805977, 424.43765748455826, 424.6013539868012, 424.9280440133374, 425.57855961590064, 426.8682527360063, 429.4030438138699, 434.30069326919113, 438.97660217405223, 447.72102500888934, 454.93594214825225, 461.59036501211926, 467.73255303629685, 473.4090460819972, 477.91170593135064, 483.509531362609, 491.3967749419346, 498.3624656734513, 504.5583985945217, 510.13095764397417, 515.1572489622488, 519.7736675190998, 524.01461549688, 528.008561864065, 531.7728138701663, 535.3294106250825, 538.7571333299416, 542.0470502633196, 545.2445994100515, 548.3907038610598, 551.4436707396403, 554.5374061656759, 557.5024595561802, 560.1927471938549, 562.8766955587216, 568.2442233179288, 573.632376152914, 579.0561090762924, 590.0246089837243, 601.2058449236744, 605.7299221315718, 612.6558430143932, 624.4105179585973, 636.4914429775982, 648.916286396759, 674.8573509784354, 702.3529013420332, 739.1172591641733, 762.5244172229906, 830.5812281999755, 907.9224473198402, 927.0409050089007, 960.2511761587249, 970.5615304208283, 991.4362189533368, 1012.745548274016, 1034.6241201627818, 1066.027658956722, 1076.9005399178773, 1098.7494091015387, 1132.8765280843563, 1149.442152704568, 1168.4577836472663, 1205.5521704703146, 1236.1535968557014, 1284.656806218134, 1287.792983552829, 1294.061094024055, 1299.16639578576, 1303.4893785281665, 1307.7929448821824, 1314.5251380481945], "type": "scatter" }, { "line": { "color": "red", "width": 3 }, "mode": "lines", "name": "Gas avg.", "x": [0.00010806517236636386, 0.00021613034473272772, 0.00043226068946545544, 0.0008645213789309109, 0.0017290427578618218, 0.0034580855157236435, 0.006916171031447287, 0.013832342062894574, 0.02766468412578915, 0.04149702618868372, 0.06916171031447287, 0.0940599260276831, 0.11895814174089334, 0.14385635745410358, 0.16875457316731382, 0.19, 0.21855100459373428, 0.2633677928775127, 0.30818458116129116, 0.3530013694450696, 0.39781815772884804, 0.4426349460126265, 0.4874517342964049, 0.5322685225801833, 0.5770853108639618, 0.6219020991477402, 0.6667188874315186, 0.7115356757152971, 0.7563524639990755, 0.801169252282854, 0.8459860405666324, 0.8908028288504108, 0.9356196171341893, 0.9804364054179677, 1.0207715148733683, 1.0611066243287688, 1.1417768432395698, 1.222447062150371, 1.303117281061172, 1.4644577188827743, 1.6257981567043767, 1.69, 1.787138594525979, 1.9484790323475814, 2.1098194701691835, 2.2711599079907856, 2.5938407836339903, 2.916521659277195, 3.32, 3.5618834105636044, 4.207245161850014, 4.852606913136423, 5.0, 5.246040530389145, 5.322041647498991, 5.474043881718684, 5.626046115938377, 5.77804835015807, 5.988940062334179, 6.06, 6.199831774510288, 6.410723486686398, 6.51, 6.621615198862507, 6.8325069110386165, 7.0, 7.254290335390836, 7.270145994384733, 7.301857312372527, 7.326643313798871, 7.347180367696956, 7.367717421595041, 7.4], "y": [691.7947905092034, 691.8049974677908, 691.8254083546828, 691.8662149082053, 691.9477702261016, 692.1106434363578, 692.4354501216787, 693.0813691158959, 694.3589788662308, 695.6183163951108, 698.0871306600711, 700.2558932365602, 702.3797070971843, 704.4630008155477, 706.5100488185086, 708.230683394658, 710.5090565110098, 714.0200190955114, 717.4668054254659, 720.8641137004497, 724.223709986118, 727.5554667066112, 730.8678603752476, 734.1680398977742, 737.4618514360783, 740.7543066032752, 744.0496404997433, 747.3512414863927, 750.6617932433586, 753.984012921202, 757.3193077829047, 760.6693463519383, 764.0356619413511, 767.429109703049, 770.4986819492434, 773.5852562769816, 779.8240844823443, 786.1332765175806, 792.515270756366, 805.4564650603339, 818.6826282293858, 824.0339000336163, 832.2259513639618, 846.1049223607039, 860.3319176081155, 874.9195484102041, 905.2303927557135, 937.1485180171766, 979.5177990067717, 1006.325355930379, 1083.584397343864, 1170.308869156694, 1191.6056472493015, 1228.4873135112803, 1240.2231923178651, 1264.1787138057439, 1288.803177215092, 1314.1281556290778, 1350.4838288844085, 1363.0656326140174, 1388.33043712495, 1427.7489988160405, 1446.8741366475333, 1468.8265777660017, 1511.6565252270657, 1546.990692425577, 1602.9923355657625, 1606.5871787394262, 1613.8243616676555, 1619.5060181080753, 1624.23026394327, 1628.973791283449, 1636.4813924951827], "type": "scatter" }, { "line": { "color": "teal", "width": 3 }, "mode": "lines", "name": "Outer shell", "x": [0.00010806517236636386, 0.00021613034473272772, 0.00043226068946545544, 0.0008645213789309109, 0.0017290427578618218, 0.0034580855157236435, 0.006916171031447287, 0.013832342062894574, 0.02766468412578915, 0.04149702618868372, 0.06916171031447287, 0.0940599260276831, 0.11895814174089334, 0.14385635745410358, 0.16875457316731382, 0.19, 0.21855100459373428, 0.2633677928775127, 0.30818458116129116, 0.3530013694450696, 0.39781815772884804, 0.4426349460126265, 0.4874517342964049, 0.5322685225801833, 0.5770853108639618, 0.6219020991477402, 0.6667188874315186, 0.7115356757152971, 0.7563524639990755, 0.801169252282854, 0.8459860405666324, 0.8908028288504108, 0.9356196171341893, 0.9804364054179677, 1.0207715148733683, 1.0611066243287688, 1.1417768432395698, 1.222447062150371, 1.303117281061172, 1.4644577188827743, 1.6257981567043767, 1.69, 1.787138594525979, 1.9484790323475814, 2.1098194701691835, 2.2711599079907856, 2.5938407836339903, 2.916521659277195, 3.32, 3.5618834105636044, 4.207245161850014, 4.852606913136423, 5.0, 5.246040530389145, 5.322041647498991, 5.474043881718684, 5.626046115938377, 5.77804835015807, 5.988940062334179, 6.06, 6.199831774510288, 6.410723486686398, 6.51, 6.621615198862507, 6.8325069110386165, 7.0, 7.254290335390836, 7.270145994384733, 7.301857312372527, 7.326643313798871, 7.347180367696956, 7.367717421595041, 7.4], "y": [246.14327591972665, 246.1613196434879, 246.19738466987064, 246.26943918297718, 246.4132002304375, 246.69933188324376, 247.26609731141025, 248.3780568799025, 250.51918016585785, 252.55438042196602, 256.33701547816077, 259.435391845518, 262.2752735099672, 264.88153703733815, 267.27748746369286, 269.1691770604891, 271.51047037380545, 274.7897455834701, 277.6656399013308, 280.21102026770734, 282.4873918602351, 284.53266553046194, 286.4022613349148, 288.1115936440066, 289.7183856312628, 291.23186441541657, 292.6480808325522, 294.0242124519947, 295.32767488509467, 296.5876232174072, 297.8382340656941, 299.02563651888556, 300.2731183536497, 301.4145632922491, 302.46688941467926, 303.51458684619956, 305.6025045788492, 307.6893073137087, 309.780669282996, 313.98179336110445, 318.22684549190444, 319.93338522844033, 322.5341530180608, 326.91595902438235, 331.37712618714215, 335.9222384679349, 345.2737886620491, 354.98917725385456, 367.6775164517841, 375.58592248704133, 397.86819795789347, 422.01376801992285, 427.8026435488498, 437.70089591636076, 440.73494103349117, 446.8220899138672, 452.9611540801751, 459.1873974078201, 467.9933476497275, 471.0072431342991, 477.0108901805381, 486.250382517773, 490.6766035414694, 495.71157912312106, 505.39813696163674, 513.2574964822055, 525.481053413941, 526.2639838445336, 527.8215909037211, 529.0869447800984, 530.1561273939511, 531.2185418504909, 532.8756617252031], "type": "scatter" }, { "marker": { "color": "red", "line": { "width": 2 }, "size": 15, "symbol": "x-open-dot" }, "mode": "markers", "name": "Exit gas", "x": [0.0], "y": [642.0], "type": "scatter" }, { "marker": { "color": "darkred", "line": { "width": 2 }, "size": 15, "symbol": "x-open-dot" }, "mode": "markers", "name": "Thermocouples", "x": [0.19, 1.69, 3.32, 6.06, 6.51], "y": [532.0, 730.0, 829.0000000000001, 1238.0, 1250.0], "type": "scatter" }, { "marker": { "color": "darkblue", "line": { "width": 2 }, "size": 15, "symbol": "x-open-dot" }, "mode": "markers", "name": "Optical pyrometry", "x": [7.0], "y": [1259.0], "type": "scatter" }, { "marker": { "color": "royalblue", "line": { "width": 2 }, "size": 15, "symbol": "x-open-dot" }, "mode": "markers", "name": "Inner wall", "x": [], "y": [], "type": "scatter" }, { "marker": { "color": "teal", "line": { "width": 2 }, "size": 15, "symbol": "x-open-dot" }, "mode": "markers", "name": "Outer shell IR", "x": [0.19, 1.69, 3.32, 5.0, 6.06, 6.51], "y": [290.0, 355.0, 408.0, 472.0, 488.0, 497.0], "type": "scatter" }, { "mode": "markers", "name": "Adiabatic flame", "x": [7.4], "y": [1672.8806619401464], "type": "scatter" }], { "template": { "data": { "bar": [{ "error_x": { "color": "#2a3f5f" }, "error_y": { "color": "#2a3f5f" }, "marker": { "line": { "color": "#E5ECF6", "width": 0.5 }, "pattern": { "fillmode": "overlay", "size": 10, "solidity": 0.2 } }, "type": "bar" }], "barpolar": [{ "marker": { "line": { "color": "#E5ECF6", "width": 0.5 }, "pattern": { "fillmode": "overlay", "size": 10, "solidity": 0.2 } }, "type": "barpolar" }], "carpet": [{ "aaxis": { "endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f" }, "baxis": { "endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f" }, "type": "carpet" }], "choropleth": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "type": "choropleth" }], "contour": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour" }], "contourcarpet": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "type": "contourcarpet" }], "heatmap": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap" }], "heatmapgl": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl" }], "histogram": [{ "marker": { "pattern": { "fillmode": "overlay", "size": 10, "solidity": 0.2 } }, "type": "histogram" }], "histogram2d": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d" }], "histogram2dcontour": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour" }], "mesh3d": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "type": "mesh3d" }], "parcoords": [{ "line": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "parcoords" }], "pie": [{ "automargin": true, "type": "pie" }], "scatter": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scatter" }], "scatter3d": [{ "line": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scatter3d" }], "scattercarpet": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scattercarpet" }], "scattergeo": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scattergeo" }], "scattergl": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scattergl" }], "scattermapbox": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scattermapbox" }], "scatterpolar": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scatterpolar" }], "scatterpolargl": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scatterpolargl" }], "scatterternary": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scatterternary" }], "surface": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface" }], "table": [{ "cells": { "fill": { "color": "#EBF0F8" }, "line": { "color": "white" } }, "header": { "fill": { "color": "#C8D4E3" }, "line": { "color": "white" } }, "type": "table" }] }, "layout": { "annotationdefaults": { "arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1 }, "autotypenumbers": "strict", "coloraxis": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "colorscale": { "diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]] }, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": { "color": "#2a3f5f" }, "geo": { "bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white" }, "hoverlabel": { "align": "left" }, "hovermode": "closest", "mapbox": { "style": "light" }, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": { "angularaxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" }, "bgcolor": "#E5ECF6", "radialaxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" } }, "scene": { "xaxis": { "backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white" }, "yaxis": { "backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white" }, "zaxis": { "backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white" } }, "shapedefaults": { "line": { "color": "#2a3f5f" } }, "ternary": { "aaxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" }, "baxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" }, "bgcolor": "#E5ECF6", "caxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" } }, "title": { "x": 0.05 }, "xaxis": { "automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": { "standoff": 15 }, "zerolinecolor": "white", "zerolinewidth": 2 }, "yaxis": { "automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": { "standoff": 15 }, "zerolinecolor": "white", "zerolinewidth": 2 } } }, "title": { "text": "KDO Trial Test Point 21" }, "xaxis": { "title": { "text": "Axial Length (m)" } }, "yaxis": { "title": { "text": "Temperature (°C)" } } }, { "responsive": true }) };                            
+						</script>
+						<figcaption>
+							Symbols are experimental data, lines are model calculations.
+						</figcaption>
+					</figure>
+				</section>
+				<section>
+					<figure>
+						<object type="image/svg+xml" data="img/phasediag.svg" width="65%" class="stretch">
+							Your browser does not support SVG
+						</object>
+						<figcaption>
+							Stable phases as a function of temperature under the
+							predicted kiln atmosphere. Temperature ranges have
+							been extended for illustration. </figcaption>
+					</figure>
+				</section>
+				<section>
+					<figure>
+						<object type="image/svg+xml" data="img/phasediag_overlay.svg" width="65%" class="stretch">
+							Your browser does not support SVG
+						</object>
+						<figcaption>
+							As optics report surface temperature
+							(maximum) and kiln model gives
+							enthalpic average, a <b>temperature
+								distribution</b>
+							explains the results. </figcaption>
+					</figure>
+				</section>
+			</section>
+			<section><!-- Conclusions and outlook -->
 				<section id="Conclusions">
 					<h2>$\text{C}\bar{\text{S}}\text{A}$ Conclusions</h2>
 					<ul>
@@ -387,34 +626,47 @@
 						</li>
 					</ul>
 				</section>
-
 				<section>
 					<h2>Outlook</h2>
 					<p> Memorandum of Understanding signed between GORD and Qatar National Cement Company. Hopefully
 						moving towards commercial production in the near future!</p>
 					<img src="img/GORD-QNCC.jpg" style="width:50%">
 				</section>
-
+				<section>
+					<h3>Modelling conclusions</h3>
+					<ul>
+						<li>
+							Mass balances and linear algebra can be used to design mixes.
+						</li>
+						<li>
+							Thermodynamics is more and more predicitive, can inform operating conditions and virtually trial clinkers.
+						</li>
+						<li>
+							Heat transfer models can be accurate, but need full-scale data (none in literature).
+						</li>
+						<li>
+							Free tools are coming for all of these, open to collaborations on development.
+						</li>
+					</ul>
+				</section>
 				<section>
 					<h3>Acknowledgements</h3>
 					<ul>
 						<li>
 							Thanks to all the members of the GCP team for their
-							input and memories over the years.
+							input and memories over the years, in particular Prof. T. Hanein who was the
+							driving force behind the original kiln/thermodynamic modelling work.
 						</li>
 						<li>
-							Thank you to the Gulf Organization for Research and Development
-							(GORD) for their the financial support provided by the
+							Thank you to GORD for their the financial support provided by the
 							through Qatar NPRP research grant numbers NPRP12S-0322-190433,
 							NPRP12S-0319-190413, and the QSTP Green Concrete Project.
 						</li>
 						<li>
-							Thanks to Dr Theodore Hanein in particular who was the
-							driving force behind the original kiln/thermodynamic modelling work.
+							Thanks to Nanocem/Innovandi for CP17 which funded Dr W. Abdul's work on wimcem.
 						</li>
 						<li>
-							Thank you to IBU-tech and their team for their support
-							during the trials.
+							Thanks to IBU-tech for their support during the trials.
 						</li>
 						<li>
 							Finally, thank you for your patience.
@@ -423,13 +675,11 @@
 				</section>
 
 			</section>
-
 			<section id="#Appendix">
 				<section>
 					<h2>Appendix</h2>
 				</section>
 			</section>
-
 			<section><!-- How to develop a CSA process -->
 				<section style="font-size:60%; ">
 					<h2>How to develop a new $\text{C}\bar{\text{S}}\text{A}$ process?</h2>
@@ -601,204 +851,6 @@
 							using controlled sulfur burning!
 						</li>
 					</ul>
-				</section>
-				<section>
-					<h3>Nanocem Core Project 17: High-temperature thermodynamics of Portland Cement Clinkers</h3>
-					<ul>
-						<li>In collaboration with A. Pisch at Grenoble, C. Rößler at
-							Weimar, and T. Hanein at Sheffield, a new thermodynamic database for
-							cement production is under development.
-						</li>
-						<li>
-							Accurate capture of C-A-S-F-M system with melt phases.
-						</li>
-						<li>
-							A foundational thermodynamic model for full OPC kiln modelling next year (including updates
-							to GEMs).
-						</li>
-					</ul>
-				</section>
-			</section>
-
-			<section>
-				<section>
-					<div style="display:flex;align-items:center;">
-						<div style="flex: 0 0 60%; border-right:2px solid black;">
-							<ul>
-								<li>
-									All 23 GCP pilot trial points were designed using our (old)
-									thermodynamic model and were mostly successful.</li>
-								<li class="fragment">
-									One of the &ldquo;challenging&rdquo; trial
-									points at a target temperature of $1300^\circ$C
-									is examined. The target was ye'elimite
-									using high alumina clay instead of bauxite.<table class="fragment"
-										style="margin:0;">
-										<thead>
-											<tr>
-												<td>Phase</td>
-												<td>$\text{C}_4\text{A}_3\bar{\text{S}}$</td>
-												<td>$\text{C}_2\text{S}$</td>
-												<td>$\text{C}_5\text{S}_2\bar{\text{S}}$</td>
-												<td>$\text{C}\bar{\text{S}}$</td>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>Thermodynamics</td>
-												<td>33%</td>
-												<td>55%</td>
-												<td>0%</td>
-												<td>0%</td>
-											</tr>
-											<tr>
-												<td>XRD analysis</td>
-												<td>34%</td>
-												<td>44%</td>
-												<td>14%</td>
-												<td>3%</td>
-											</tr>
-										</tbody>
-									</table>
-								</li>
-								<li class="fragment">
-									Thermodynamics fails to predict the appearance of
-									ternesite. What does thermodynamics miss?</li>
-							</ul>
-						</div>
-						<div style="flex:1;">
-							<video loop autoplay controls muted>
-								<source src="img/kiln.mp4" type="video/mp4" />
-							</video>
-						</div>
-					</div>
-				</section>
-				<section>
-					<section style="margin:0;height:100%;width:100%;padding:0;">
-					<img class="r-stretch" src="img/JL-economics.svg" style="background-color:white;">
-					<div
-						style="display:inline-block; width:100%; text-align:center; background-color:#000000aa; color:white;border-radius: 15px 0 0 0; padding:5px; font-size:85%;">
-						Bauxite is relatively expensive due to competition with aluminium
-						production. However, we explore using abundant lower grade aluminous clays. <br />
-						Even production in Qatar is competitive, despite bauxite costs.
-						<small>
-							J. L.-Galvez-Martos et al. “Techno-economic assessment of calcium sulfoaluminate clinker
-							production using elemental sulfur as raw material,”
-							J. Clean. Prod., 301, 126888 (2021)
-						</small>
-					</div>
-				</section>
-				</section>
-			</section>
-			<section id="#kilnmodel" style="height:100%;width:100%;">
-				<section>
-					<ul>
-						<li>
-							Although kinetics are a factor (more
-							so at low temperatures), our
-							experience shows understanding the <b>actual</b> rather
-							than targeted processing
-							conditions/temperature is far more
-							important.</li>
-						<!-- <li class="fragment">
-				 Also, heat transfer is controlled via
-				 fuel/air rates, which changes the
-				 atmosphere within the kiln. If the
-				 atmosphere plays a role, then heat
-				 transfer is inextricably linked with
-				 the clinker thermodynamics.</li>-->
-						<li class="fragment"> A combined
-							thermodynamics and kiln heat-transfer
-							model has been developed to target
-							these issues.</li>
-					</ul>
-				</section>
-				<section>
-					<figure>
-						<object type="image/svg+xml" data="img/kiln_balance.svg" width="100%">
-							Your browser does not support SVG
-						</object>
-						<figcaption>
-							One-dimensional heat transfer model
-							breaks the kiln into slices with
-							enthalpic homogenised temperatures for
-							the solid and gas phases. Our model
-							was optimised against a database of
-							kiln studies. See our paper for more
-							information. <small>T. Hanein, F. P. Glasser, and M. N. Bannerman, “One-dimensional
-								steady-state thermal model for rotary kilns used in the manufacture of cement,” <i>Adv.
-									Appl. Ceram.</i>, <b>116</b>(4), 207-215 (2017)</small></figcaption>
-					</figure>
-				</section>
-				<section>
-					<div style="display:flex;align-items:center;">
-						<div style="flex: 0 0 70%; border-right:2px solid black;">
-							<ul>
-								<li>
-									Our kiln model is fully
-									predictive: inlet gas
-									temperature from adiabatic
-									flame calculation, solids at
-									room temperature. No fitting.</li>
-								<li class="fragment">
-									It is difficult to get <i>direct</i> thermal
-									measurements from production kilns:
-									<ul>
-										<li class="fragment">
-											Surface temperatures and exit bed temperature are
-											measured via optical pyrometry (which was also
-											used to control the kiln temperature).
-										</li>
-										<li class="fragment">
-											Internal temperatures via thermocouple wells
-											(fixed to wall, so they rotate in and out of the
-											bed).
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-						<div style="flex:1;">
-							<img src="img/theo_sampling.png" width="611" height="1072" style="float:right;width:100%;">
-						</div>
-					</div>
-				</section>
-			</section>
-			<section style="height:100%; width:100%">
-				<section style="height:100%; width:100%">
-					<figure style="display:flex; flex-flow:column; height:100%; margin:0; padding:0;">
-						<div id="3f781c7e-3d27-4453-b2ac-24c1ddfedcec" class="plotly-graph-div"
-							style="flex:1; width:100%;"></div>
-						<script
-							type="text/javascript"> window.PLOTLYENV = window.PLOTLYENV || {}; if (document.getElementById("3f781c7e-3d27-4453-b2ac-24c1ddfedcec")) { Plotly.newPlot("3f781c7e-3d27-4453-b2ac-24c1ddfedcec", [{ "line": { "color": "darkblue", "width": 3 }, "mode": "lines", "name": "Solid", "x": [0.00010806517236636386, 0.00021613034473272772, 0.00043226068946545544, 0.0008645213789309109, 0.0017290427578618218, 0.0034580855157236435, 0.006916171031447287, 0.013832342062894574, 0.02766468412578915, 0.04149702618868372, 0.06916171031447287, 0.0940599260276831, 0.11895814174089334, 0.14385635745410358, 0.16875457316731382, 0.19, 0.21855100459373428, 0.2633677928775127, 0.30818458116129116, 0.3530013694450696, 0.39781815772884804, 0.4426349460126265, 0.4874517342964049, 0.5322685225801833, 0.5770853108639618, 0.6219020991477402, 0.6667188874315186, 0.7115356757152971, 0.7563524639990755, 0.801169252282854, 0.8459860405666324, 0.8908028288504108, 0.9356196171341893, 0.9804364054179677, 1.0207715148733683, 1.0611066243287688, 1.1417768432395698, 1.222447062150371, 1.303117281061172, 1.4644577188827743, 1.6257981567043767, 1.69, 1.787138594525979, 1.9484790323475814, 2.1098194701691835, 2.2711599079907856, 2.5938407836339903, 2.916521659277195, 3.32, 3.5618834105636044, 4.207245161850014, 4.852606913136423, 5.0, 5.246040530389145, 5.322041647498991, 5.474043881718684, 5.626046115938377, 5.77804835015807, 5.988940062334179, 6.06, 6.199831774510288, 6.410723486686398, 6.51, 6.621615198862507, 6.8325069110386165, 7.0, 7.254290335390836, 7.270145994384733, 7.301857312372527, 7.326643313798871, 7.347180367696956, 7.367717421595041, 7.4], "y": [396.76698639636027, 396.8435508135427, 396.9966007435137, 397.3023042925122, 397.912207010849, 399.12583349424017, 401.52864489703916, 406.23828747003165, 415.28861685926074, 423.86578244294685, 439.73137164738, 452.6352367479701, 464.37465097760287, 475.0585594696372, 484.7910827197651, 492.40389573816435, 501.723215653309, 514.5538817398317, 525.550714275872, 535.0461915622678, 543.3026382248854, 550.5383591721442, 556.9392985926462, 562.6598852009287, 567.823303497514, 572.5354410239937, 576.8848422071139, 580.9417751401301, 584.7616918671382, 588.399714809611, 591.8832753119093, 595.2443167692734, 598.5110452950772, 601.68372133294, 604.503855496577, 607.2961974514966, 612.8227892959188, 618.3247660952994, 623.8287515377992, 634.8997710945366, 646.1154872718424, 650.6406317415772, 657.5544722795545, 669.2694816040041, 681.2886523181047, 693.6347103192763, 719.3674822507345, 746.5877098745591, 782.9039651136508, 805.9824743988589, 872.9362051421111, 948.8140614246428, 967.5493696110435, 1000.0804769026275, 1010.3523093877192, 1031.014801982652, 1051.9970475448895, 1073.4740211917356, 1104.2902551124107, 1114.9613614632894, 1136.4131898406608, 1169.8962029130475, 1186.1458570047575, 1204.7982984133532, 1241.1912986286397, 1271.218427173038, 1318.8179785410152, 1321.872390664496, 1328.021912012317, 1333.3443347530306, 1337.7045688285107, 1342.0238476948903, 1348.7430371191954], "type": "scatter" }, { "line": { "color": "royalblue", "dash": "dash", "width": 3 }, "mode": "lines", "name": "Inner wall", "x": [0.00010806517236636386, 0.00021613034473272772, 0.00043226068946545544, 0.0008645213789309109, 0.0017290427578618218, 0.0034580855157236435, 0.006916171031447287, 0.013832342062894574, 0.02766468412578915, 0.04149702618868372, 0.06916171031447287, 0.0940599260276831, 0.11895814174089334, 0.14385635745410358, 0.16875457316731382, 0.19, 0.21855100459373428, 0.2633677928775127, 0.30818458116129116, 0.3530013694450696, 0.39781815772884804, 0.4426349460126265, 0.4874517342964049, 0.5322685225801833, 0.5770853108639618, 0.6219020991477402, 0.6667188874315186, 0.7115356757152971, 0.7563524639990755, 0.801169252282854, 0.8459860405666324, 0.8908028288504108, 0.9356196171341893, 0.9804364054179677, 1.0207715148733683, 1.0611066243287688, 1.1417768432395698, 1.222447062150371, 1.303117281061172, 1.4644577188827743, 1.6257981567043767, 1.69, 1.787138594525979, 1.9484790323475814, 2.1098194701691835, 2.2711599079907856, 2.5938407836339903, 2.916521659277195, 3.32, 3.5618834105636044, 4.207245161850014, 4.852606913136423, 5.0, 5.246040530389145, 5.322041647498991, 5.474043881718684, 5.626046115938377, 5.77804835015807, 5.988940062334179, 6.06, 6.199831774510288, 6.410723486686398, 6.51, 6.621615198862507, 6.8325069110386165, 7.0, 7.254290335390836, 7.270145994384733, 7.301857312372527, 7.326643313798871, 7.347180367696956, 7.367717421595041, 7.4], "y": [424.3147357961026, 424.35572291805977, 424.43765748455826, 424.6013539868012, 424.9280440133374, 425.57855961590064, 426.8682527360063, 429.4030438138699, 434.30069326919113, 438.97660217405223, 447.72102500888934, 454.93594214825225, 461.59036501211926, 467.73255303629685, 473.4090460819972, 477.91170593135064, 483.509531362609, 491.3967749419346, 498.3624656734513, 504.5583985945217, 510.13095764397417, 515.1572489622488, 519.7736675190998, 524.01461549688, 528.008561864065, 531.7728138701663, 535.3294106250825, 538.7571333299416, 542.0470502633196, 545.2445994100515, 548.3907038610598, 551.4436707396403, 554.5374061656759, 557.5024595561802, 560.1927471938549, 562.8766955587216, 568.2442233179288, 573.632376152914, 579.0561090762924, 590.0246089837243, 601.2058449236744, 605.7299221315718, 612.6558430143932, 624.4105179585973, 636.4914429775982, 648.916286396759, 674.8573509784354, 702.3529013420332, 739.1172591641733, 762.5244172229906, 830.5812281999755, 907.9224473198402, 927.0409050089007, 960.2511761587249, 970.5615304208283, 991.4362189533368, 1012.745548274016, 1034.6241201627818, 1066.027658956722, 1076.9005399178773, 1098.7494091015387, 1132.8765280843563, 1149.442152704568, 1168.4577836472663, 1205.5521704703146, 1236.1535968557014, 1284.656806218134, 1287.792983552829, 1294.061094024055, 1299.16639578576, 1303.4893785281665, 1307.7929448821824, 1314.5251380481945], "type": "scatter" }, { "line": { "color": "red", "width": 3 }, "mode": "lines", "name": "Gas avg.", "x": [0.00010806517236636386, 0.00021613034473272772, 0.00043226068946545544, 0.0008645213789309109, 0.0017290427578618218, 0.0034580855157236435, 0.006916171031447287, 0.013832342062894574, 0.02766468412578915, 0.04149702618868372, 0.06916171031447287, 0.0940599260276831, 0.11895814174089334, 0.14385635745410358, 0.16875457316731382, 0.19, 0.21855100459373428, 0.2633677928775127, 0.30818458116129116, 0.3530013694450696, 0.39781815772884804, 0.4426349460126265, 0.4874517342964049, 0.5322685225801833, 0.5770853108639618, 0.6219020991477402, 0.6667188874315186, 0.7115356757152971, 0.7563524639990755, 0.801169252282854, 0.8459860405666324, 0.8908028288504108, 0.9356196171341893, 0.9804364054179677, 1.0207715148733683, 1.0611066243287688, 1.1417768432395698, 1.222447062150371, 1.303117281061172, 1.4644577188827743, 1.6257981567043767, 1.69, 1.787138594525979, 1.9484790323475814, 2.1098194701691835, 2.2711599079907856, 2.5938407836339903, 2.916521659277195, 3.32, 3.5618834105636044, 4.207245161850014, 4.852606913136423, 5.0, 5.246040530389145, 5.322041647498991, 5.474043881718684, 5.626046115938377, 5.77804835015807, 5.988940062334179, 6.06, 6.199831774510288, 6.410723486686398, 6.51, 6.621615198862507, 6.8325069110386165, 7.0, 7.254290335390836, 7.270145994384733, 7.301857312372527, 7.326643313798871, 7.347180367696956, 7.367717421595041, 7.4], "y": [691.7947905092034, 691.8049974677908, 691.8254083546828, 691.8662149082053, 691.9477702261016, 692.1106434363578, 692.4354501216787, 693.0813691158959, 694.3589788662308, 695.6183163951108, 698.0871306600711, 700.2558932365602, 702.3797070971843, 704.4630008155477, 706.5100488185086, 708.230683394658, 710.5090565110098, 714.0200190955114, 717.4668054254659, 720.8641137004497, 724.223709986118, 727.5554667066112, 730.8678603752476, 734.1680398977742, 737.4618514360783, 740.7543066032752, 744.0496404997433, 747.3512414863927, 750.6617932433586, 753.984012921202, 757.3193077829047, 760.6693463519383, 764.0356619413511, 767.429109703049, 770.4986819492434, 773.5852562769816, 779.8240844823443, 786.1332765175806, 792.515270756366, 805.4564650603339, 818.6826282293858, 824.0339000336163, 832.2259513639618, 846.1049223607039, 860.3319176081155, 874.9195484102041, 905.2303927557135, 937.1485180171766, 979.5177990067717, 1006.325355930379, 1083.584397343864, 1170.308869156694, 1191.6056472493015, 1228.4873135112803, 1240.2231923178651, 1264.1787138057439, 1288.803177215092, 1314.1281556290778, 1350.4838288844085, 1363.0656326140174, 1388.33043712495, 1427.7489988160405, 1446.8741366475333, 1468.8265777660017, 1511.6565252270657, 1546.990692425577, 1602.9923355657625, 1606.5871787394262, 1613.8243616676555, 1619.5060181080753, 1624.23026394327, 1628.973791283449, 1636.4813924951827], "type": "scatter" }, { "line": { "color": "teal", "width": 3 }, "mode": "lines", "name": "Outer shell", "x": [0.00010806517236636386, 0.00021613034473272772, 0.00043226068946545544, 0.0008645213789309109, 0.0017290427578618218, 0.0034580855157236435, 0.006916171031447287, 0.013832342062894574, 0.02766468412578915, 0.04149702618868372, 0.06916171031447287, 0.0940599260276831, 0.11895814174089334, 0.14385635745410358, 0.16875457316731382, 0.19, 0.21855100459373428, 0.2633677928775127, 0.30818458116129116, 0.3530013694450696, 0.39781815772884804, 0.4426349460126265, 0.4874517342964049, 0.5322685225801833, 0.5770853108639618, 0.6219020991477402, 0.6667188874315186, 0.7115356757152971, 0.7563524639990755, 0.801169252282854, 0.8459860405666324, 0.8908028288504108, 0.9356196171341893, 0.9804364054179677, 1.0207715148733683, 1.0611066243287688, 1.1417768432395698, 1.222447062150371, 1.303117281061172, 1.4644577188827743, 1.6257981567043767, 1.69, 1.787138594525979, 1.9484790323475814, 2.1098194701691835, 2.2711599079907856, 2.5938407836339903, 2.916521659277195, 3.32, 3.5618834105636044, 4.207245161850014, 4.852606913136423, 5.0, 5.246040530389145, 5.322041647498991, 5.474043881718684, 5.626046115938377, 5.77804835015807, 5.988940062334179, 6.06, 6.199831774510288, 6.410723486686398, 6.51, 6.621615198862507, 6.8325069110386165, 7.0, 7.254290335390836, 7.270145994384733, 7.301857312372527, 7.326643313798871, 7.347180367696956, 7.367717421595041, 7.4], "y": [246.14327591972665, 246.1613196434879, 246.19738466987064, 246.26943918297718, 246.4132002304375, 246.69933188324376, 247.26609731141025, 248.3780568799025, 250.51918016585785, 252.55438042196602, 256.33701547816077, 259.435391845518, 262.2752735099672, 264.88153703733815, 267.27748746369286, 269.1691770604891, 271.51047037380545, 274.7897455834701, 277.6656399013308, 280.21102026770734, 282.4873918602351, 284.53266553046194, 286.4022613349148, 288.1115936440066, 289.7183856312628, 291.23186441541657, 292.6480808325522, 294.0242124519947, 295.32767488509467, 296.5876232174072, 297.8382340656941, 299.02563651888556, 300.2731183536497, 301.4145632922491, 302.46688941467926, 303.51458684619956, 305.6025045788492, 307.6893073137087, 309.780669282996, 313.98179336110445, 318.22684549190444, 319.93338522844033, 322.5341530180608, 326.91595902438235, 331.37712618714215, 335.9222384679349, 345.2737886620491, 354.98917725385456, 367.6775164517841, 375.58592248704133, 397.86819795789347, 422.01376801992285, 427.8026435488498, 437.70089591636076, 440.73494103349117, 446.8220899138672, 452.9611540801751, 459.1873974078201, 467.9933476497275, 471.0072431342991, 477.0108901805381, 486.250382517773, 490.6766035414694, 495.71157912312106, 505.39813696163674, 513.2574964822055, 525.481053413941, 526.2639838445336, 527.8215909037211, 529.0869447800984, 530.1561273939511, 531.2185418504909, 532.8756617252031], "type": "scatter" }, { "marker": { "color": "red", "line": { "width": 2 }, "size": 15, "symbol": "x-open-dot" }, "mode": "markers", "name": "Exit gas", "x": [0.0], "y": [642.0], "type": "scatter" }, { "marker": { "color": "darkred", "line": { "width": 2 }, "size": 15, "symbol": "x-open-dot" }, "mode": "markers", "name": "Thermocouples", "x": [0.19, 1.69, 3.32, 6.06, 6.51], "y": [532.0, 730.0, 829.0000000000001, 1238.0, 1250.0], "type": "scatter" }, { "marker": { "color": "darkblue", "line": { "width": 2 }, "size": 15, "symbol": "x-open-dot" }, "mode": "markers", "name": "Optical pyrometry", "x": [7.0], "y": [1259.0], "type": "scatter" }, { "marker": { "color": "royalblue", "line": { "width": 2 }, "size": 15, "symbol": "x-open-dot" }, "mode": "markers", "name": "Inner wall", "x": [], "y": [], "type": "scatter" }, { "marker": { "color": "teal", "line": { "width": 2 }, "size": 15, "symbol": "x-open-dot" }, "mode": "markers", "name": "Outer shell IR", "x": [0.19, 1.69, 3.32, 5.0, 6.06, 6.51], "y": [290.0, 355.0, 408.0, 472.0, 488.0, 497.0], "type": "scatter" }, { "mode": "markers", "name": "Adiabatic flame", "x": [7.4], "y": [1672.8806619401464], "type": "scatter" }], { "template": { "data": { "bar": [{ "error_x": { "color": "#2a3f5f" }, "error_y": { "color": "#2a3f5f" }, "marker": { "line": { "color": "#E5ECF6", "width": 0.5 }, "pattern": { "fillmode": "overlay", "size": 10, "solidity": 0.2 } }, "type": "bar" }], "barpolar": [{ "marker": { "line": { "color": "#E5ECF6", "width": 0.5 }, "pattern": { "fillmode": "overlay", "size": 10, "solidity": 0.2 } }, "type": "barpolar" }], "carpet": [{ "aaxis": { "endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f" }, "baxis": { "endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f" }, "type": "carpet" }], "choropleth": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "type": "choropleth" }], "contour": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour" }], "contourcarpet": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "type": "contourcarpet" }], "heatmap": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap" }], "heatmapgl": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl" }], "histogram": [{ "marker": { "pattern": { "fillmode": "overlay", "size": 10, "solidity": 0.2 } }, "type": "histogram" }], "histogram2d": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d" }], "histogram2dcontour": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour" }], "mesh3d": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "type": "mesh3d" }], "parcoords": [{ "line": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "parcoords" }], "pie": [{ "automargin": true, "type": "pie" }], "scatter": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scatter" }], "scatter3d": [{ "line": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scatter3d" }], "scattercarpet": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scattercarpet" }], "scattergeo": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scattergeo" }], "scattergl": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scattergl" }], "scattermapbox": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scattermapbox" }], "scatterpolar": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scatterpolar" }], "scatterpolargl": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scatterpolargl" }], "scatterternary": [{ "marker": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "type": "scatterternary" }], "surface": [{ "colorbar": { "outlinewidth": 0, "ticks": "" }, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface" }], "table": [{ "cells": { "fill": { "color": "#EBF0F8" }, "line": { "color": "white" } }, "header": { "fill": { "color": "#C8D4E3" }, "line": { "color": "white" } }, "type": "table" }] }, "layout": { "annotationdefaults": { "arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1 }, "autotypenumbers": "strict", "coloraxis": { "colorbar": { "outlinewidth": 0, "ticks": "" } }, "colorscale": { "diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]] }, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": { "color": "#2a3f5f" }, "geo": { "bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white" }, "hoverlabel": { "align": "left" }, "hovermode": "closest", "mapbox": { "style": "light" }, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": { "angularaxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" }, "bgcolor": "#E5ECF6", "radialaxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" } }, "scene": { "xaxis": { "backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white" }, "yaxis": { "backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white" }, "zaxis": { "backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white" } }, "shapedefaults": { "line": { "color": "#2a3f5f" } }, "ternary": { "aaxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" }, "baxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" }, "bgcolor": "#E5ECF6", "caxis": { "gridcolor": "white", "linecolor": "white", "ticks": "" } }, "title": { "x": 0.05 }, "xaxis": { "automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": { "standoff": 15 }, "zerolinecolor": "white", "zerolinewidth": 2 }, "yaxis": { "automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": { "standoff": 15 }, "zerolinecolor": "white", "zerolinewidth": 2 } } }, "title": { "text": "KDO Trial Test Point 21" }, "xaxis": { "title": { "text": "Axial Length (m)" } }, "yaxis": { "title": { "text": "Temperature (°C)" } } }, { "responsive": true }) };                            </script>
-						<figcaption>
-							Symbols are experimental data, lines are model calculations.
-						</figcaption>
-					</figure>
-				</section>
-				<section>
-					<figure>
-						<object type="image/svg+xml" data="img/phasediag.svg" width="65%" class="stretch">
-							Your browser does not support SVG
-						</object>
-						<figcaption>
-							Stable phases as a function of temperature under the
-							predicted kiln atmosphere. Temperature ranges have
-							been extended for illustration. </figcaption>
-					</figure>
-				</section>
-				<section>
-					<figure>
-						<object type="image/svg+xml" data="img/phasediag_overlay.svg" width="65%" class="stretch">
-							Your browser does not support SVG
-						</object>
-						<figcaption>
-							As optics report surface temperature
-							(maximum) and kiln model gives
-							enthalpic average, a <b>temperature
-								distribution</b>
-							explains the results. </figcaption>
-					</figure>
 				</section>
 			</section>
 			<section id="Conclusions">
@@ -1072,6 +1124,7 @@
 						we?</li>
 				</ul>
 			</section>
+			<!-- 
 			<section>
 				<video loop autoplay controls muted>
 					<source src="img/BrowsingSimcem.mp4" type="video/mp4" />
@@ -1082,8 +1135,9 @@
 					<source src="img/ReactorSimcem.mp4" type="video/mp4" />
 				</video>
 			</section>
+			-->
 			<section>
-				<h3>Thermodynamic solver</h3>
+				<h3>Simcem Thermodynamic solver</h3>
 				<ul>
 					<li>
 						Original C++ equation-oriented solver (using IPOPT). Thermodynamic models are expressed as a
